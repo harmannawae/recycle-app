@@ -7,4 +7,31 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content> </ion-content>
+<ion-content>
+  <ion-item>
+    <ion-label position="floating">ชื่อ</ion-label>
+    <ion-input [(ngModel)]="name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>ประเภทขยะ</ion-label>
+    <ion-select placeholder="โปรดเลือก" [(ngModel)]="sname">
+      <ion-select-option value="ขวด">ขวด</ion-select-option>
+      <ion-select-option value="เหล็ก">เหล็ก</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="floating">เบอร์โทรศัพท์</ion-label>
+    <ion-input [(ngModel)]="phone"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">น้ำหนัก/ชิ้น</ion-label>
+    <ion-input [(ngModel)]="username"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">ที่อยู่ที่ต้องไปรับ</ion-label>
+    <ion-input [(ngModel)]="password"></ion-input>
+  </ion-item>
+  <ion-button id="btn-save"  color="tertiary" expand="block" size="small" (click)="save()">ขาย</ion-button>
+</ion-content>
