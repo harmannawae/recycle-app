@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>ราคาขยะ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h1 class="menu-text-price">ราคาขยะ</h1>
+  <ion-card *ngFor="let user of users" class="menu-item">
+   <ion-card-content>
+      <h2>{{ user.p_name }}</h2><h2 slot="end"> {{ user.p_price }}</h2>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

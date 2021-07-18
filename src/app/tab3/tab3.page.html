@@ -1,0 +1,19 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+    <ion-title>
+      ตัวฉัน
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button 
+   id="btn-save" 
+   class="btn-logout"
+   color="non" 
+   expand="block" 
+   size="small" 
+   routerLink="/profile">โปรไฟล์</ion-button>
+  <ion-button id="btn-save" class="btn-logout" color="non" expand="block" size="small" (click)="logout()">ออกจากระบบ</ion-button>
+
+</ion-content>

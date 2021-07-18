@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="tertiary">
+      <ion-title>
+          หน้าแรก
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+      <ion-row>
+          <ion-col class="menu-item">
+              <a routerLink="/menu-price">
+                  <img src="assets/icon/trash.png">
+                  <div>ราคาขยะ</div>
+              </a>
+          </ion-col>
+
+          <ion-col class="menu-item">
+            <a routerLink="/menu-table">
+                <img src="assets/icon/table.png">
+                <div>ตาราง</div>
+            </a>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col class="menu-item">
+            <a routerLink="/menu-newspaper">
+                <img src="assets/icon/newspaper.png">
+                <div>ข่าวสาร</div>
+            </a>
+        </ion-col>
+    </ion-row>
+      
+  </ion-grid>
+</ion-content>

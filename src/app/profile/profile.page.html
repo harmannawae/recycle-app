@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+         <ion-back-button></ion-back-button>
+    </ion-buttons>
+     <ion-title>profile</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <img src="assets/icon/profile.png" class="image">
+  <div class="fullname">{{ member_name }} {{ member_sname }}</div>
+  <div class="phone">{{ member_phone }}</div>
+  <ion-button color="danger" expand="block" size="small" (click)="logout()">ออกจากระบบ</ion-button>
+</ion-content>

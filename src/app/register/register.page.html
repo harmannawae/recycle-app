@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>เพิ่มสมาชิกใหม่</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item>
+      <ion-label position="floating">ชื่อ</ion-label>
+      <ion-input [(ngModel)]="name"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label position="floating">นามสกุล</ion-label>
+      <ion-input [(ngModel)]="sname"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label position="floating">เบอร์โทรศัพท์</ion-label>
+      <ion-input [(ngModel)]="phone"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label position="floating">username</ion-label>
+      <ion-input [(ngModel)]="username"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label position="floating">password</ion-label>
+      <ion-input [(ngModel)]="password"></ion-input>
+  </ion-item>
+  <ion-button id="btn-save" color="tertiary" expand="block" size="large" (click)="save()">สมัคสมาชิก</ion-button>
+</ion-content>

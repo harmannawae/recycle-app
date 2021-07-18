@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+  </ion-buttons>
+    <ion-title>ข่าวสาร</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let user of users">
+    <ion-card-header>
+      <ion-card-subtitle>{{ user.n_title }}</ion-card-subtitle>
+      <ion-card-title>{{ user.n_name }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      {{ user.n_content }}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
