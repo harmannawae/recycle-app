@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { LoadingController, AlertController, ToastController } from '@ionic/angular';
+import { LoadingController, AlertController, ToastController,  NavController } from '@ionic/angular';
 import { HttpClient } from '@angular/common/http';
 import { timeout } from 'rxjs/operators';
+import { NavigationExtras, Router } from '@angular/router';
 import { Storage } from '@ionic/storage-angular';     //ต้องติดตั้ง package เพิ่มเติมที่ terminal  พิมพ์ว่า npm install @ionic/storage-angular
 
 @Injectable({
@@ -17,6 +18,8 @@ export class SessionService {
     private alertCtrl: AlertController,
     private toastController: ToastController,
     private storage: Storage,
+    private router: Router,
+    private nav: NavController,
   ) { }
   public async ajax(url, data, isloading) {   // method สำหรับการเชือมต่อเรียก Api Service
     let loading: any;
@@ -116,4 +119,22 @@ export class SessionService {
   public removeStorage(key) {     // method สำหรับลบข้อมูล Storage
     return this.storage.remove(key);
   }
+  public LinkTo(page, type = true) { // type=false ไม่จำ/ true=จำ
+    if (type == false) {
+        this.router.navigateByUrl(page, { replaceUrl: true }); // ไม่จำประวัติหน้าก่อนหน้า
+    } else {
+        this.router.navigateByUrl(page);  // จำประวัติหน้าก่อนหน้า
+    }
 }
+public LinkToParam(page, queryParams) {
+    let navigationExtras: NavigationExtras = {
+        queryParams: queryParams
+    };
+    this.router.navigate([page], navigationExtras);
+}
+public Back() { // ฟังก์ชันสำหรับถอยไปยังหน้าก่อนหน้า
+    this.nav.pop();
+}
+}
+
+

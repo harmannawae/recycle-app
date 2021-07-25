@@ -1,14 +1,26 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="tertiary">
-    <ion-title>
-      ขาย
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="tertiary">
+        <ion-title> ขาย </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
+    <ion-button class="btn-item" color="non" expand="block" size="small" routerLink="/menu-sell">
+        ฉันต้องการขายขยะ
+    </ion-button>
 
-  <ion-button class="btn-item" color="non" expand="block" size="small" routerLink="/menu-sell">ฉันต้องการขายขยะ</ion-button>
-  <ion-button class="btn-item" color="non" expand="block" size="small" routerLink="/profile">รายการที่ฉันโพสต์ขาย</ion-button>
-  
+    <ion-button class="btn-item" color="non" expand="block" size="small" routerLink="/menu-mysell">
+        รายการที่ฉันโพสต์ขาย
+      </ion-button>
+    <ion-button class="btn-item" color="non" expand="block" size="small" (click)="OpenCamera()"> 
+        camera
+    </ion-button>
+
+    <ion-button class="btn-item" color="non" expand="block" size="small" (click)="OpenLocation()">
+        locationTest
+    </ion-button>
+
+    <div>
+      <img style="width: 100%;" src="{{ img }}" alt="Image">
+    </div>
 </ion-content>

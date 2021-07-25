@@ -8,11 +8,10 @@ import { SessionService } from '../session/session.service';
   styleUrls: ['./menu-sell.page.scss'],
 })
 export class MenuSellPage implements OnInit  {
-  name = "";
-  sname = "";
-  phone = "";
-  username = "";
-  password = "";
+  type = "";
+  weight = "";
+  address = "";
+  
   constructor(
     private router: Router,
     public session: SessionService
@@ -22,15 +21,14 @@ export class MenuSellPage implements OnInit  {
   }
   async save() {
     // เอาข้อมูลบันทึกลงฐานข้อมูล
-    this.session.ajax(this.session.api + "register.php", {
-      member_name: this.name,
-      member_sname: this.sname,
-      member_phone: this.phone,
-      username: this.username,
-      password: this.password
+    this.session.ajax(this.session.api + "sell.php", {
+      s_type: this.type,
+      s_weight: this.weight,
+      s_address: this.address
+      
     }, true).then((res: any) => {
       this.session.showAlert(res.msg).then(rs => {
-       // this.router.navigateByUrl('/login');
+        this.router.navigateByUrl('/tabs/tab2');
       });
     }).catch(err => {
       this.session.showAlert(err);

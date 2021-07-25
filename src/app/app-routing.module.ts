@@ -18,7 +18,8 @@ const routes: Routes = [
   {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
-  },  {
+  },
+  {
     path: 'menu-newspaper',
     loadChildren: () => import('./menu-newspaper/menu-newspaper.module').then( m => m.MenuNewspaperPageModule)
   },
@@ -34,7 +35,15 @@ const routes: Routes = [
     path: 'menu-sell',
     loadChildren: () => import('./menu-sell/menu-sell.module').then( m => m.MenuSellPageModule)
   },
+  {
+    path: 'menu-mysell',
+    loadChildren: () => import('./menu-mysell/menu-mysell.module').then( m => m.MenuMysellPageModule)
+  },  {
+    path: 'location',
+    loadChildren: () => import('./location/location.module').then( m => m.LocationPageModule)
+  },
 
+  
   
 ];
 @NgModule({

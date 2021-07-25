@@ -11,7 +11,7 @@
   <h1 class="menu-text-price">ราคาขยะ</h1>
   <ion-card *ngFor="let user of users" class="menu-item">
    <ion-card-content>
-      <h2>{{ user.p_name }}</h2><h2 slot="end"> {{ user.p_price }}</h2>
+      <h2>{{ user.product_name }} {{ user.price }}</h2>
     </ion-card-content>
   </ion-card>
 </ion-content>

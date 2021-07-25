@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2021 at 03:51 PM
+-- Generation Time: Jul 22, 2021 at 07:30 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.25
 
@@ -69,7 +69,33 @@ INSERT INTO `member` (`member_id`, `member_name`, `member_sname`, `member_phone`
 (3, 'อิลฮัม', 'มอลอ', '0987072703', 'ilham', 'molo'),
 (4, 'dulmanah', 'hama', '0808745932', '1111', '1111'),
 (5, 'อารีมี', 'จะปะกียา', '0937849273', 'arimee', '1234'),
-(6, 'solahudin', 'kaji', '00200000', 'solahudding', '1234');
+(6, 'solahudin', 'kaji', '00200000', 'solahudding', '1234'),
+(8, 'ergerge', 'ggr', 'gereg', 'regergr', 'grege');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `menu_sell`
+--
+
+CREATE TABLE `menu_sell` (
+  `s_id` int(100) NOT NULL,
+  `s_img` varchar(255) NOT NULL,
+  `s_type` varchar(255) NOT NULL,
+  `s_weight` varchar(255) NOT NULL,
+  `s_address` varchar(255) NOT NULL,
+  `member_id` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `menu_sell`
+--
+
+INSERT INTO `menu_sell` (`s_id`, `s_img`, `s_type`, `s_weight`, `s_address`, `member_id`) VALUES
+(1, '', 'ขวด', '25 km', 'เมื่อง ยะลา', '3'),
+(2, '', 'ขวด', 'rewara', 'sre', ''),
+(3, '', 'ขวด', '50', '121212', ''),
+(4, '', 'ขวด', 'fsfsef', 'fefesf', '');
 
 -- --------------------------------------------------------
 
@@ -99,17 +125,17 @@ INSERT INTO `newspaper` (`n_id`, `n_title`, `n_name`, `n_content`) VALUES
 --
 
 CREATE TABLE `product_price` (
-  `p_id` int(200) NOT NULL,
-  `p_name` varchar(200) NOT NULL,
-  `p_price` varchar(200) NOT NULL,
-  `p_code` varchar(200) NOT NULL
+  `product_id` int(200) NOT NULL,
+  `product_name` varchar(200) NOT NULL,
+  `price` varchar(200) NOT NULL,
+  `type_id` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `product_price`
 --
 
-INSERT INTO `product_price` (`p_id`, `p_name`, `p_price`, `p_code`) VALUES
+INSERT INTO `product_price` (`product_id`, `product_name`, `price`, `type_id`) VALUES
 (1, 'เหล็ก', '25บาท', 'p0001'),
 (2, 'ขวด', '20 บาท', 'p0002');
 
@@ -130,6 +156,12 @@ ALTER TABLE `member`
   ADD PRIMARY KEY (`member_id`);
 
 --
+-- Indexes for table `menu_sell`
+--
+ALTER TABLE `menu_sell`
+  ADD PRIMARY KEY (`s_id`);
+
+--
 -- Indexes for table `newspaper`
 --
 ALTER TABLE `newspaper`
@@ -139,7 +171,7 @@ ALTER TABLE `newspaper`
 -- Indexes for table `product_price`
 --
 ALTER TABLE `product_price`
-  ADD PRIMARY KEY (`p_id`);
+  ADD PRIMARY KEY (`product_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -152,6 +184,12 @@ ALTER TABLE `admin`
   MODIFY `admin_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
+-- AUTO_INCREMENT for table `menu_sell`
+--
+ALTER TABLE `menu_sell`
+  MODIFY `s_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT for table `newspaper`
 --
 ALTER TABLE `newspaper`
@@ -161,7 +199,7 @@ ALTER TABLE `newspaper`
 -- AUTO_INCREMENT for table `product_price`
 --
 ALTER TABLE `product_price`
-  MODIFY `p_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `product_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

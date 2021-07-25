@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+  </ion-buttons>
+    <ion-title>เมนูที่ฉันลงขาย</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let user of users">
+    <ion-card-header>
+      <ion-card-subtitle>{{ user.s_type }}</ion-card-subtitle>
+      <ion-card-title>5</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+     5
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
