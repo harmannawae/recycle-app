@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>รายชื่อผู้รอขายขยะ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!--h1 class="title">My Orders</h1-->
+
+  <div class="order-items" *ngFor="let user of users">
+    <ion-card mode="ios">
+      <ion-card-content>
+        <!--div class="item-img">
+          <img src="assets/icon/profile.png">
+        </div-->
+
+        <div class="item-info" >
+          <p>ชื่อ:{{ user.name }}</p>
+          <p>ประเภทขยะ:{{ user.type }}</p>
+          <p>น้ำหนัก:{{ user.weight }}</p>
+
+          <ion-button expand="block" class="main-button"  routerLink="/menu-member-show/{{ user.id }}" >รายละเอียด</ion-button>
+        </div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

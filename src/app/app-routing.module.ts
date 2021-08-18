@@ -31,17 +31,37 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
-  {
-    path: 'menu-sell',
-    loadChildren: () => import('./menu-sell/menu-sell.module').then( m => m.MenuSellPageModule)
-  },
+  
   {
     path: 'menu-mysell',
     loadChildren: () => import('./menu-mysell/menu-mysell.module').then( m => m.MenuMysellPageModule)
-  },  {
+  },
+  {
     path: 'location',
     loadChildren: () => import('./location/location.module').then( m => m.LocationPageModule)
   },
+  {
+    path: 'test',
+    loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
+  },
+  {
+    path: 'menu-map',
+    loadChildren: () => import('./menu-map/menu-map.module').then( m => m.MenuMapPageModule)
+  },
+  {
+    path: 'menu-post-sell',
+    loadChildren: () => import('./menu-post-sell/menu-post-sell.module').then( m => m.MenuPostSellPageModule)
+  },
+  
+  {
+    path: 'menu-member',
+    loadChildren: () => import('./menu-member/menu-member.module').then( m => m.MenuMemberPageModule)
+  },
+  {
+    path: 'menu-member-show/:id',
+    loadChildren: () => import('./menu-member-show/menu-member-show.module').then( m => m.MenuMemberShowPageModule)
+  },
+
 
   
   

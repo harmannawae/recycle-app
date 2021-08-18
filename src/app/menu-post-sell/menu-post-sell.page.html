@@ -9,23 +9,24 @@
 
 <ion-content>
 
+
   <ion-item>
     <ion-label>ประเภทขยะ</ion-label>
     <ion-select placeholder="โปรดเลือก" [(ngModel)]="type">
       <ion-select-option value="ขวด">ขวด</ion-select-option>
       <ion-select-option value="เหล็ก">เหล็ก</ion-select-option>
+      <ion-select-option value="เศษเหล็ก">เศษเหล็ก</ion-select-option>
     </ion-select>
   </ion-item>
-
-  
 
   <ion-item>
     <ion-label position="floating">น้ำหนัก</ion-label>
     <ion-input [(ngModel)]="weight"></ion-input>
   </ion-item>
-  <ion-item>
-    <ion-label position="floating">ที่อยู่ที่ต้องไปรับ</ion-label>
-    <ion-input [(ngModel)]="address"></ion-input>
-  </ion-item>
-  <ion-button   color="tertiary" expand="block" size="small" (click)="save()">ลงขาย</ion-button>
-</ion-content>
+  
+
+<ion-footer translucent="true" class="ion-no-border" mode="md">
+  <ion-toolbar color="translucent">
+    <ion-button expand="block" class="main-button" routerLink="/tabs/tab2" routerDirection="forward" (click)="save()">Continue</ion-button>
+  </ion-toolbar>
+</ion-footer>

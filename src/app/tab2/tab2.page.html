@@ -1,26 +1,37 @@
 <ion-header [translucent]="true">
     <ion-toolbar color="tertiary">
-        <ion-title> ขาย </ion-title>
+        <ion-title> ขายขยะ </ion-title>
     </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <ion-button class="btn-item" color="non" expand="block" size="small" routerLink="/menu-sell">
+    <div class="title">เลือกรายการที่ตาการ</div>
+    <!--ion-button class="btn-item" color="non" expand="block" size="small" routerLink="/menu-sell">
+        ฉันต้องการขายขยะ
+    </ion-button-->
+
+    <ion-button class="btn-item" color="danger" expand="block" size="large" routerLink="/menu-post-sell">
         ฉันต้องการขายขยะ
     </ion-button>
+    
+    <div class="title">สถานะ</div>
 
-    <ion-button class="btn-item" color="non" expand="block" size="small" routerLink="/menu-mysell">
-        รายการที่ฉันโพสต์ขาย
-      </ion-button>
-    <ion-button class="btn-item" color="non" expand="block" size="small" (click)="OpenCamera()"> 
-        camera
-    </ion-button>
-
-    <ion-button class="btn-item" color="non" expand="block" size="small" (click)="OpenLocation()">
-        locationTest
-    </ion-button>
-
-    <div>
-      <img style="width: 100%;" src="{{ img }}" alt="Image">
-    </div>
+      <ion-grid>
+        <ion-row>
+            <ion-col class="menu-item">
+                <a routerLink="/menu-member">
+                    <img src="assets/icon/all.png">
+                    <div>ผู้ที่รอขายขยะทั้งหมด</div>
+                </a>
+            </ion-col>
+  
+            <ion-col class="menu-item">
+              <a routerLink="/menu-table">
+                  <img src="assets/icon/search.png">
+                  <div>ผู้ที่ขายแล้ว</div>
+              </a>
+          </ion-col>
+        </ion-row>
+        
+    </ion-grid>
 </ion-content>

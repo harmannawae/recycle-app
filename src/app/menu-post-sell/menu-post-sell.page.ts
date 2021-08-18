@@ -3,32 +3,30 @@ import { Router } from '@angular/router';
 import { SessionService } from '../session/session.service';
 
 @Component({
-  selector: 'app-menu-sell',
-  templateUrl: './menu-sell.page.html',
-  styleUrls: ['./menu-sell.page.scss'],
+  selector: 'app-menu-post-sell',
+  templateUrl: './menu-post-sell.page.html',
+  styleUrls: ['./menu-post-sell.page.scss'],
 })
-export class MenuSellPage implements OnInit  {
+export class MenuPostSellPage implements OnInit {
   type = "";
   weight = "";
-  address = "";
-  
+  user_id = "";
   constructor(
     private router: Router,
     public session: SessionService
   ) { }
-
-  ngOnInit() {
+  async ngOnInit() {
+    this.user_id = await this.session.getStorage("user_id");
   }
   async save() {
     // เอาข้อมูลบันทึกลงฐานข้อมูล
-    this.session.ajax(this.session.api + "sell.php", {
-      s_type: this.type,
-      s_weight: this.weight,
-      s_address: this.address
-      
+    this.session.ajax(this.session.api + "menu-post-sell.php", {
+      type: this.type,
+      weight: this.weight,
+      user_id: this.user_id
     }, true).then((res: any) => {
       this.session.showAlert(res.msg).then(rs => {
-        this.router.navigateByUrl('/tabs/tab2');
+        if( res.status==true ) this.router.navigateByUrl('/tabs/tab2');
       });
     }).catch(err => {
       this.session.showAlert(err);

@@ -20,3 +20,13 @@
 	$POSTDATA = file_get_contents("php://input");
 	$REQUEST = json_decode($POSTDATA);						// ตัวแปรสำหรับดึงข้อมูลจากแอพที่ส่งข้อมูล
 	
+     //ฟั่งชั่น  ดักจับคนสมัคแล้วไม่กรอกข้อมูลกดบันทึกให้ไม่สำเร็จ
+	function CheckValue($value, $msg) {
+        if( $value=="" ) {
+            echo json_encode(array(
+                "status"=>false,
+                "msg"=>$msg
+            ));
+            exit();
+        }
+    }

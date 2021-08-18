@@ -9,7 +9,8 @@ import { Storage } from '@ionic/storage-angular';     //ต้องติดต
   providedIn: 'root'
 })
 export class SessionService {
-  public api = "http://localhost/recycle-app/";     // ตัวแปรสำหรับชี้ที่ตั้งของ Api
+  //public api = "http://localhost/recycle-app/";     // ตัวแปรสำหรับชี้ที่ตั้งของ Api
+  public api = "http://192.168.137.1/recycle-app/";     // รันวงแลนเดี่ยวกัน
   //public api = "http://406168039.student.yru.ac.th/recycle-app/";     // ตัวแปรสำหรับชี้ที่ตั้งของ Api สำหรับในมหสลัย
   public apiTimeout: number = 5000;
   constructor(

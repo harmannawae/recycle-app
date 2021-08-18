@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { Router } from '@angular/router';
 import { SessionService } from '../session/session.service';
 
 @Component({
@@ -8,23 +8,25 @@ import { SessionService } from '../session/session.service';
   styleUrls: ['./menu-mysell.page.scss'],
 })
 export class MenuMysellPage implements OnInit {
-  users = [];
-
+  member_name = "";
+  member_sname = "";
+  member_phone ="";
+  username = "";
   constructor(
-    public alertController: AlertController,
-    public session: SessionService
-
+    public session: SessionService,
+    private router: Router,
   ) { }
-
-  ngOnInit() {
-
-  }
-  ionViewDidEnter() {
+  async ngOnInit() {
+    this.username = await this.session.getStorage("username");
     this.loadData();
   }
   loadData() {
-    this.session.ajax(this.session.api + "menu-mysell.php", {}, true).then((res: any) => {
-      this.users = res.datas;
+    this.session.ajax(this.session.api + "menu-mysell.php", {
+      username: this.username
+    }, true).then((res: any) => {
+      this.member_name = res.data.member_name;
+      this.member_sname = res.data.member_sname;
+      this.member_phone = res.data.member_phone;
     }).catch(err => {
       this.session.showAlert(err);
     });

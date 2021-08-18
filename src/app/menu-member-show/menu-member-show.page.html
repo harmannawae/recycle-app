@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar color="tertiary">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>รายละเอียดข้อมูลผู้ขายขยะ</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card class="menu-item">
+        <ion-card-content>
+            <div class="menu-item2">ประเภท: {{ type }}</div>
+            <div class="menu-item2">น้ำหนัก: {{ weight }}</div>
+            <div class="menu-item2">ชื่อ: {{ name }}</div>
+            <div class="menu-item2">เบอร์โทรศัพท์: {{ phone }}</div>
+            <div class="menu-item2">ที่อยู่: {{ address }}</div>
+
+            <ion-button
+                color="danger"
+                expand="block"
+                size="small"
+                routerLink="/location">
+                เปิดแผนที่
+            </ion-button>
+        </ion-card-content>
+    </ion-card>
+</ion-content>

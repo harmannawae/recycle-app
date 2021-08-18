@@ -25,6 +25,7 @@ export class LoginPage implements OnInit {
       password: this.password
     }, true).then(async (res: any) => {
       if (res.status) {
+        await this.session.setStorage("user_id", res.data.user_id);//บันทึกคุกกี้ของ user คน คน เดี่ยวเพื่อแสดง  
         await this.session.setStorage("username", this.username);
         await this.session.setStorage("password", this.password);
         this.router.navigateByUrl('/tabs/tab1', { replaceUrl: true }); // เมื่อ login สำเร็จ ให้วิ่งไปยังหน้า home

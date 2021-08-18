@@ -3,13 +3,13 @@
     <ion-buttons slot="start">
          <ion-back-button></ion-back-button>
     </ion-buttons>
-     <ion-title>{{ member_name }} {{ member_sname }}</ion-title>
+     <ion-title>{{ user_name }} {{ user_lastname }}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <img src="assets/icon/profile.png" class="image">
-  <div class="fullname">{{ member_name }} {{ member_sname }}</div>
-  <div class="phone">{{ member_phone }}</div>
+  <div class="fullname">{{ user_name }} {{ user_lastname }}</div>
+  <div class="phone">{{ user_phone }}</div>
   <ion-button color="danger" expand="block" size="small" (click)="logout()">ออกจากระบบ</ion-button>
 </ion-content>

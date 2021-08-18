@@ -1,25 +1,37 @@
 <?php
     include("config/autoload.php");
 
-    $member_id = $DATABASE->QueryMaxId("member", "member_id");
-    $member_name = $REQUEST->member_name;
-    $member_sname = $REQUEST->member_sname;
-    $member_phone = $REQUEST->member_phone;
+    $user_id = $DATABASE->QueryMaxId("user", "user_id");
+    $user_name = $REQUEST->user_name;
+    $user_lastname = $REQUEST->user_lastname;
+    $user_phone = $REQUEST->user_phone;
+    $user_address = $REQUEST->user_address;
     $username = $REQUEST->username;
     $password = $REQUEST->password;
+
+     //เรียกฟั่งชั่นดักจับคนไม่กรอกข้อมูล ที่เรากำหนดฟั่งชั่นหน้า autoload 
+    CheckValue($user_name, "คุณยังไม่ได้ป้อนชื่อ");
+    CheckValue($user_lastname, "คุณยังไม่ได้ป้อนนามสกุล");
+    CheckValue($user_phone, "คุณยังไม่ได้ป้อนเบอร์โทรศัพท์");
+    CheckValue($user_address, "คุณยังไม่ได้ป้อนที่อยู่");
+    CheckValue($username, "คุณยังไม่ได้ป้อนีusername");
+    CheckValue($password, "คุณยังไม่ได้ป้อนpassword");
+
     $sql = "
-        INSERT INTO member (
-            member_id, 
-            member_name,
-            member_sname,
-            member_phone,
+        INSERT INTO user (
+            user_id, 
+            user_name,
+            user_lastname,
+            user_phone,
+            user_address,
             username,
             password
         ) VALUES (
-            '".$member_id."', 
-            '".$member_name."',
-            '".$member_sname."',
-            '".$member_phone."',
+            '".$user_id."', 
+            '".$user_name."',
+            '".$user_lastname."',
+            '".$user_phone."',
+            '".$user_address."',
             '".$username."',
             '".$password."'
         )
@@ -28,5 +40,5 @@
 
     echo json_encode(array(
         "status"=>true,
-        "msg"=>"สมัคสมาชิก"
+        "msg"=>"สมัคสมาชิกสำเร็จ"
     ));

@@ -8,9 +8,10 @@ import { SessionService } from '../session/session.service';
   styleUrls: ['./register.page.scss'],
 })
 export class RegisterPage implements OnInit  {
-  name = "";
-  sname = "";
-  phone = "";
+  user_name = "";
+  user_lastname = "";
+  user_phone = "";
+  user_address = "";
   username = "";
   password = "";
   constructor(
@@ -23,9 +24,10 @@ export class RegisterPage implements OnInit  {
   async save() {
     // เอาข้อมูลบันทึกลงฐานข้อมูล
     this.session.ajax(this.session.api + "register.php", {
-      member_name: this.name,
-      member_sname: this.sname,
-      member_phone: this.phone,
+      user_name: this.user_name,
+      user_lastname: this.user_lastname,
+      user_phone: this.user_phone,
+      user_address: this.user_address,
       username: this.username,
       password: this.password
     }, true).then((res: any) => {

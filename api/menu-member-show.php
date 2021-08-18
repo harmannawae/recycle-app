@@ -1,9 +1,9 @@
 <?php
     include("config/autoload.php");
 
-    $member_id = $REQUEST->member_id;
+    $id = $REQUEST->id;
 
-    $sql = "SELECT * FROM member WHERE member_id='".$member_id."' ";
+    $sql = "SELECT * FROM member_sell WHERE id='".$id."' ";
 
     $obj = $DATABASE->QueryObj($sql);
 

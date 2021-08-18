@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 22, 2021 at 07:30 PM
+-- Generation Time: Aug 18, 2021 at 09:24 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.25
 
@@ -46,6 +46,24 @@ INSERT INTO `admin` (`admin_id`, `admin_name`, `admin_sname`, `admin_img`, `user
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `location`
+--
+
+CREATE TABLE `location` (
+  `lat` varchar(50) NOT NULL,
+  `lng` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `location`
+--
+
+INSERT INTO `location` (`lat`, `lng`) VALUES
+('6.5320113413805', '101.28550644509');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `member`
 --
 
@@ -63,39 +81,30 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`member_id`, `member_name`, `member_sname`, `member_phone`, `username`, `password`) VALUES
-(0, 'ฮารมัน', 'นาแว', '0936373661', 'admin2', '1234'),
 (1, 'harman', 'nawae', '0936373661', 'harman', '1234'),
 (2, 'sunhagee', 'thuion', '0937849273', 'sunhagee', '1234'),
 (3, 'อิลฮัม', 'มอลอ', '0987072703', 'ilham', 'molo'),
-(4, 'dulmanah', 'hama', '0808745932', '1111', '1111'),
-(5, 'อารีมี', 'จะปะกียา', '0937849273', 'arimee', '1234'),
-(6, 'solahudin', 'kaji', '00200000', 'solahudding', '1234'),
-(8, 'ergerge', 'ggr', 'gereg', 'regergr', 'grege');
+(4, 'dulmanah', 'hama', '0808745932', '1111', '1111');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `menu_sell`
+-- Table structure for table `member_sell`
 --
 
-CREATE TABLE `menu_sell` (
-  `s_id` int(100) NOT NULL,
-  `s_img` varchar(255) NOT NULL,
-  `s_type` varchar(255) NOT NULL,
-  `s_weight` varchar(255) NOT NULL,
-  `s_address` varchar(255) NOT NULL,
-  `member_id` varchar(20) NOT NULL
+CREATE TABLE `member_sell` (
+  `id` int(11) NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `weight` varchar(20) NOT NULL,
+  `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `menu_sell`
+-- Dumping data for table `member_sell`
 --
 
-INSERT INTO `menu_sell` (`s_id`, `s_img`, `s_type`, `s_weight`, `s_address`, `member_id`) VALUES
-(1, '', 'ขวด', '25 km', 'เมื่อง ยะลา', '3'),
-(2, '', 'ขวด', 'rewara', 'sre', ''),
-(3, '', 'ขวด', '50', '121212', ''),
-(4, '', 'ขวด', 'fsfsef', 'fefesf', '');
+INSERT INTO `member_sell` (`id`, `type`, `weight`, `user_id`) VALUES
+(1, 'ขวด', '55kg', 2);
 
 -- --------------------------------------------------------
 
@@ -104,7 +113,6 @@ INSERT INTO `menu_sell` (`s_id`, `s_img`, `s_type`, `s_weight`, `s_address`, `me
 --
 
 CREATE TABLE `newspaper` (
-  `n_id` int(4) NOT NULL,
   `n_title` varchar(255) NOT NULL,
   `n_name` varchar(255) NOT NULL,
   `n_content` varchar(255) NOT NULL
@@ -114,9 +122,9 @@ CREATE TABLE `newspaper` (
 -- Dumping data for table `newspaper`
 --
 
-INSERT INTO `newspaper` (`n_id`, `n_title`, `n_name`, `n_content`) VALUES
-(1, 'คู่มื่อ', 'วิธีแยกขยะแต่ละประเภท', '1.ถังขยะสำหรับขยะอินทรีย์ ขยะเปียก (สีเขียว) ขยะอินทรีย์ คือ ขยะที่เน่าเสียและย่อยสลายได้เร็ว เช่น เศษอาหาร เปลือกผลไม้ เศษผัก เนื้อสัตว์ เศษใบไม้แห้ง\r\n2.ถังขยะสำหรับขยะทั่วไป (สีน้ำเงิน)\r\n3.ถังขยะสำหรับขยะรีไซเคิล (สีเหลือง)\r\n4.ถังขยะสำหรับ'),
-(2, 'คู่มือ', 'วิธีการขายขยะภายในแอพ', '1.สมัคสมาชิกและเข้าสู่ระบบ 2.ไปหน้าหลักกดเมนูราคาขยะเพื่อดูราคาแต่ละประเภท 3.ดูตารางรับซื้อขยะแต่วันของรถรับซื้อขยะ 4.ไปเมนูขายเพื่อกรอกข้อมูลขายขยะ 5.รอรถมารับขยะตามวันเวลาในตาราง');
+INSERT INTO `newspaper` (`n_title`, `n_name`, `n_content`) VALUES
+('fsfefsf', 'esfesfsefse', 'fefsfefesfsefesf'),
+('dawdawdwadawd', 'wadawdwad', 'wadawdwadwadawd');
 
 -- --------------------------------------------------------
 
@@ -125,19 +133,43 @@ INSERT INTO `newspaper` (`n_id`, `n_title`, `n_name`, `n_content`) VALUES
 --
 
 CREATE TABLE `product_price` (
-  `product_id` int(200) NOT NULL,
-  `product_name` varchar(200) NOT NULL,
-  `price` varchar(200) NOT NULL,
-  `type_id` varchar(200) NOT NULL
+  `p_id` int(200) NOT NULL,
+  `p_name` varchar(200) NOT NULL,
+  `p_price` varchar(200) NOT NULL,
+  `p_code` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `product_price`
 --
 
-INSERT INTO `product_price` (`product_id`, `product_name`, `price`, `type_id`) VALUES
+INSERT INTO `product_price` (`p_id`, `p_name`, `p_price`, `p_code`) VALUES
 (1, 'เหล็ก', '25บาท', 'p0001'),
 (2, 'ขวด', '20 บาท', 'p0002');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `user_id` int(11) NOT NULL,
+  `user_name` int(11) NOT NULL,
+  `user_lastname` varchar(100) NOT NULL,
+  `user_phone` varchar(100) NOT NULL,
+  `user_address` varchar(100) NOT NULL,
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`user_id`, `user_name`, `user_lastname`, `user_phone`, `user_address`, `username`, `password`) VALUES
+(1, 1, 'hhh', 'hhh', 'hh', 'hhh', 'hh'),
+(2, 2, 'nawae', '0936373661', '161/5 ม.6  ต.อาซ่อง อ.รามัน จ.ยะลา', 'admin', '1234');
 
 --
 -- Indexes for dumped tables
@@ -156,22 +188,22 @@ ALTER TABLE `member`
   ADD PRIMARY KEY (`member_id`);
 
 --
--- Indexes for table `menu_sell`
+-- Indexes for table `member_sell`
 --
-ALTER TABLE `menu_sell`
-  ADD PRIMARY KEY (`s_id`);
-
---
--- Indexes for table `newspaper`
---
-ALTER TABLE `newspaper`
-  ADD PRIMARY KEY (`n_id`);
+ALTER TABLE `member_sell`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `product_price`
 --
 ALTER TABLE `product_price`
-  ADD PRIMARY KEY (`product_id`);
+  ADD PRIMARY KEY (`p_id`);
+
+--
+-- Indexes for table `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`user_name`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -184,22 +216,22 @@ ALTER TABLE `admin`
   MODIFY `admin_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `menu_sell`
+-- AUTO_INCREMENT for table `member_sell`
 --
-ALTER TABLE `menu_sell`
-  MODIFY `s_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `newspaper`
---
-ALTER TABLE `newspaper`
-  MODIFY `n_id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+ALTER TABLE `member_sell`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `product_price`
 --
 ALTER TABLE `product_price`
-  MODIFY `product_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `p_id` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `user_name` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

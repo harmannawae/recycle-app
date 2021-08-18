@@ -8,9 +8,9 @@ import { SessionService } from '../session/session.service';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit  {
-  member_name = "";
-  member_sname = "";
-  member_phone ="";
+  user_name = "";
+  user_lastname = "";
+  user_phone ="";
   username = "";
   constructor(
     public session: SessionService,
@@ -24,9 +24,9 @@ export class ProfilePage implements OnInit  {
     this.session.ajax(this.session.api + "profile.php", {
       username: this.username
     }, true).then((res: any) => {
-      this.member_name = res.data.member_name;
-      this.member_sname = res.data.member_sname;
-      this.member_phone = res.data.member_phone;
+      this.user_name = res.data.user_name;
+      this.user_lastname = res.data.user_lastname;
+      this.user_phone = res.data.user_phone;
     }).catch(err => {
       this.session.showAlert(err);
     });
@@ -34,6 +34,7 @@ export class ProfilePage implements OnInit  {
   async logout() {
     this.session.showConfirm("คุณแน่ใจต้องการออกจากระบบใช่หรือไม่ ?").then(async rs => {
       if (rs) {
+        await this.session.removeStorage("user_id");
         await this.session.removeStorage("username");
         await this.session.removeStorage("password");
         this.router.navigateByUrl('/login', { replaceUrl: true }); // ให้วิ่งไปยังหน้า login ใหม่

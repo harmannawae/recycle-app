@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MenuSellPageRoutingModule } from './menu-sell-routing.module';
+import { MenuMapPageRoutingModule } from './menu-map-routing.module';
 
-import { MenuSellPage } from './menu-sell.page';
+import { MenuMapPage } from './menu-map.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MenuSellPageRoutingModule
+    MenuMapPageRoutingModule
   ],
-  declarations: [MenuSellPage]
+  declarations: [MenuMapPage]
 })
-export class MenuSellPageModule {}
+export class MenuMapPageModule {}

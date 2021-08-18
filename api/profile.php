@@ -3,7 +3,7 @@
 
     $username = $REQUEST->username;
 
-    $sql = "SELECT * FROM member WHERE username='".$username."' ";
+    $sql = "SELECT * FROM user WHERE username='".$username."' ";
 
     $obj = $DATABASE->QueryObj($sql);
 

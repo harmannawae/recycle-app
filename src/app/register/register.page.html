@@ -10,16 +10,20 @@
 <ion-content>
   <ion-item>
       <ion-label position="floating">ชื่อ</ion-label>
-      <ion-input [(ngModel)]="name"></ion-input>
+      <ion-input [(ngModel)]="user_name"></ion-input>
   </ion-item>
   <ion-item>
       <ion-label position="floating">นามสกุล</ion-label>
-      <ion-input [(ngModel)]="sname"></ion-input>
+      <ion-input [(ngModel)]="user_lastname"></ion-input>
   </ion-item>
   <ion-item>
       <ion-label position="floating">เบอร์โทรศัพท์</ion-label>
-      <ion-input [(ngModel)]="phone"></ion-input>
+      <ion-input [(ngModel)]="user_phone"></ion-input>
   </ion-item>
+  <ion-item>
+    <ion-label position="floating">ที่อยู่</ion-label>
+    <ion-input [(ngModel)]="user_address"></ion-input>
+</ion-item>
   <ion-item>
       <ion-label position="floating">username</ion-label>
       <ion-input [(ngModel)]="username"></ion-input>
