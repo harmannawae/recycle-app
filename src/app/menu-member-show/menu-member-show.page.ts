@@ -10,9 +10,10 @@ export class MenuMemberShowPage implements OnInit {
   id = "";
   type = "";
   weight = "";
-  name = "";
-  phone = "";
-  address = "";
+  user_name = "";
+  user_lastname = "";
+  user_phone = "";
+  user_address = "";
  
   constructor(
     private route: ActivatedRoute,
@@ -32,9 +33,10 @@ export class MenuMemberShowPage implements OnInit {
       this.id = res.data.id;
       this.type = res.data.type;
       this.weight = res.data.weight;
-      this.name = res.data.name;
-      this.phone = res.data.phone;
-      this.address = res.data.address;
+      this.user_name = res.data.user_name;
+      this.user_lastname = res.data.user_lastname;
+      this.user_phone = res.data.user_phone;
+      this.user_address = res.data.user_address;
     }).catch(err => {
       this.session.showAlert(err);
     });
