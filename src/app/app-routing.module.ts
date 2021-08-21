@@ -60,10 +60,9 @@ const routes: Routes = [
   {
     path: 'menu-member-show/:id',
     loadChildren: () => import('./menu-member-show/menu-member-show.module').then( m => m.MenuMemberShowPageModule)
-  },
-  {
-    path: 'rider-menu',
-    loadChildren: () => import('./rider-menu/rider-menu.module').then( m => m.RiderMenuPageModule)
+  },  {
+    path: 'menu-member-get',
+    loadChildren: () => import('./menu-member-get/menu-member-get.module').then( m => m.MenuMemberGetPageModule)
   },
 
   

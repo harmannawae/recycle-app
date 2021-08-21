@@ -5,26 +5,19 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-    <div class="title">เลือกรายการที่ตาการ</div>
-    <!--ion-button class="btn-item" color="non" expand="block" size="small" routerLink="/menu-sell">
-        ฉันต้องการขายขยะ
-    </ion-button-->
 
-    <ion-button class="btn-item" color="danger" expand="block" size="large" routerLink="/menu-post-sell">
-        ฉันต้องการขายขยะ
-    </ion-button>
-    
-    <div class="title">สถานะ</div>
+    <div>
+        <div class="title" *ngIf="user_type=='member'">เลือกรายการที่ต้องการ</div>
+        <ion-button class="btn-item" color="danger" expand="block" size="large" routerLink="/menu-post-sell" *ngIf="user_type=='member'">
+            <div>ฉันต้องการขายขยะ</div>
+        </ion-button>
+    </div>
 
+    <div class="title">รายการ</div>
       <ion-grid>
         <ion-row>
-            <ion-col class="menu-item">
-                <a routerLink="/menu-member">
-                    <img src="assets/icon/all.png">
-                    <div>รายการลงขายของฉันทั้งหมด</div>
-                </a>
-            </ion-col>
-  
+            <!--สำหรับadmin-->
+            <!--แสดงเมนูสำหรับแอดมิน คำสั่ง  *ngIf="user_type=='admin'" -->
             <ion-col class="menu-item" *ngIf="user_type=='admin'">
                 <a routerLink="/menu-table">
                     <img src="assets/icon/search.png">
@@ -32,36 +25,29 @@
                 </a>
             </ion-col>
 
-
+            <!--สำหรับmember-->
+            <!--แสดงเมนูสำหรับmember คำสั่ง  *ngIf="user_type=='member'" -->
             <ion-col class="menu-item" *ngIf="user_type=='member'">
                 <a routerLink="/menu-member">
-                    <img src="assets/icon/all.png">
-                    <div>Member1</div>
+                    <img src="assets/icon/list.png">
+                    <div>รายการของฉัน</div>
                 </a>
             </ion-col>
             <ion-col class="menu-item" *ngIf="user_type=='member'">
                 <a routerLink="/menu-member">
-                    <img src="assets/icon/all.png">
-                    <div>Member2</div>
+                    <img src="assets/icon/checklist.png">
+                    <div>ขายสำเร็จ</div>
                 </a>
             </ion-col>
 
-            <ion-col class="menu-item" *ngIf="user_type=='rider'">
-                <a routerLink="/menu-member">
-                    <img src="assets/icon/all.png">
-                    <div>Rider1</div>
+             <!--สำหรับrider-->
+             <!--แสดงเมนูสำหรับrider คำสั่ง  *ngIf="user_type=='rider'" -->
+             <ion-col class="menu-item" *ngIf="user_type=='rider'">
+                <a routerLink="/menu-member-get">
+                    <img src="assets/icon/list.png">
+                    <div>รายการลงขาย</div>
                 </a>
             </ion-col>
-            <ion-col class="menu-item" *ngIf="user_type=='rider'">
-                <a routerLink="/menu-member">
-                    <img src="assets/icon/all.png">
-                    <div>Rider2</div>
-                </a>
-            </ion-col>
-
-
-
         </ion-row>
-        
     </ion-grid>
 </ion-content>

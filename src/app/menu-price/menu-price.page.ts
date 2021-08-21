@@ -8,7 +8,7 @@ import { SessionService } from '../session/session.service';
   styleUrls: ['./menu-price.page.scss'],
 })
 export class MenuPricePage implements OnInit {
-  users = [];
+  products = [];
 
   constructor(
     public alertController: AlertController,
@@ -24,7 +24,7 @@ export class MenuPricePage implements OnInit {
   }
   loadData() {
     this.session.ajax(this.session.api + "product-get.php", {}, true).then((res: any) => {
-      this.users = res.datas;
+      this.products = res.datas;
     }).catch(err => {
       this.session.showAlert(err);
     });

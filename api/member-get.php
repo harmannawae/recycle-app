@@ -2,6 +2,8 @@
     include("config/autoload.php");
 
     $user_id = @$REQUEST->user_id;
+
+    //$sql = "SELECT * FROM member_sell WHERE user_id='".$user_id."' ";
     $sql = "
         SELECT 
             member_sell.*,
@@ -9,7 +11,6 @@
             member_sell.weight*product.p_price AS total 
         FROM member_sell 
             INNER JOIN product ON product.p_id=member_sell.type
-        WHERE member_sell.user_id='".$user_id."'
     ";
     $obj = $DATABASE->QueryObj($sql);
 

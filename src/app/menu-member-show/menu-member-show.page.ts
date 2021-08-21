@@ -9,6 +9,7 @@ import { SessionService } from '../session/session.service';
 export class MenuMemberShowPage implements OnInit {
   id = "";
   type = "";
+  p_type = "";
   weight = "";
   user_name = "";
   user_lastname = "";
@@ -32,6 +33,7 @@ export class MenuMemberShowPage implements OnInit {
     }, true).then((res: any) => {
       this.id = res.data.id;
       this.type = res.data.type;
+      this.p_type = res.data.p_type;
       this.weight = res.data.weight;
       this.user_name = res.data.user_name;
       this.user_lastname = res.data.user_lastname;

@@ -10,6 +10,7 @@ import { SessionService } from '../session/session.service';
 export class MenuPostSellPage implements OnInit {
   type = "";
   weight = "";
+  p_id = "";
   user_id = "";
   types = [];
   constructor(
@@ -31,6 +32,7 @@ export class MenuPostSellPage implements OnInit {
     // เอาข้อมูลบันทึกลงฐานข้อมูล
     this.session.ajax(this.session.api + "menu-post-sell.php", {
       type: this.type,
+      p_id: this.p_id,
       weight: this.weight,
       user_id: this.user_id
     }, true).then((res: any) => {
@@ -41,4 +43,4 @@ export class MenuPostSellPage implements OnInit {
       this.session.showAlert(err);
     });
   }
-}
+} 

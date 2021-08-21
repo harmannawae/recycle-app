@@ -1,7 +1,7 @@
 <?php
     include("config/autoload.php");
 
-    $sql = "SELECT * FROM product_price";
+    $sql = "SELECT * FROM product";
 
     $obj = $DATABASE->QueryObj($sql);
 
@@ -9,3 +9,6 @@
         "status"=>true,
         "datas"=>$obj
     ));
+
+
+    

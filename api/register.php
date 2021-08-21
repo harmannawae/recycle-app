@@ -25,7 +25,8 @@
             user_phone,
             user_address,
             username,
-            password
+            password,
+            user_type
         ) VALUES (
             '".$user_id."', 
             '".$user_name."',
@@ -33,7 +34,8 @@
             '".$user_phone."',
             '".$user_address."',
             '".$username."',
-            '".$password."'
+            '".$password."',
+            'member'
         )
     ";
     $obj = $DATABASE->Query($sql);

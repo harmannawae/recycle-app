@@ -9,9 +9,9 @@
 
 <ion-content>
   <h1 class="menu-text-price">ราคาขยะ</h1>
-  <ion-card *ngFor="let user of users" class="menu-item">
+  <ion-card *ngFor="let product of products" class="menu-item">
    <ion-card-content>
-      <h2>{{ user.p_name }} {{ user.p_price }}</h2>
+      <h2>{{ product.p_name }} {{ product.p_price }}</h2>
     </ion-card-content>
   </ion-card>
 </ion-content>

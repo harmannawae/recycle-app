@@ -5,14 +5,14 @@
           <ion-back-button></ion-back-button>
       </ion-buttons>
 
-      <ion-title>รายการของฉัน</ion-title>
+      <ion-title>รายการลงขาย</ion-title>
       
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <div>
-      <ion-card *ngFor="let user of users" class="menu-item" >
+      <ion-card *ngFor="let user of users" class="menu-item" routerLink="/menu-member-show/{{ user.id }}" >
       <ion-card-content>
         <h2>ประเภทขยะ: {{ user.p_name }}</h2>
         <h2>น้ำหนัก: {{ user.weight }} กก.</h2>

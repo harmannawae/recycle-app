@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { RiderMenuPageRoutingModule } from './rider-menu-routing.module';
+import { MenuMemberGetPageRoutingModule } from './menu-member-get-routing.module';
 
-import { RiderMenuPage } from './rider-menu.page';
+import { MenuMemberGetPage } from './menu-member-get.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    RiderMenuPageRoutingModule
+    MenuMemberGetPageRoutingModule
   ],
-  declarations: [RiderMenuPage]
+  declarations: [MenuMemberGetPage]
 })
-export class RiderMenuPageModule {}
+export class MenuMemberGetPageModule {}

@@ -9,10 +9,12 @@
     if( sizeof($obj)==1 ) {
         echo json_encode(array(
             "status"=>true,
-            "data"=>$obj[0]
+            "data"=>$obj[0],
+            "message"=>"เข้าสู่ระบบสำเร็จกกก"
         ));
     } else {
         echo json_encode(array(
-            "status"=>false
+            "status"=>false,
+            "message"=>"ไม่สำเร็จกรุณาลองใหม่อีกครั้ง"
         ));
     }

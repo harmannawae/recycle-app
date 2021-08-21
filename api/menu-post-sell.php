@@ -4,17 +4,25 @@
     $id = $DATABASE->QueryMaxId("member_sell", "id");
     $type = $REQUEST->type;
     $weight = $REQUEST->weight;
+    $p_id = $REQUEST->p_id;
     $user_id = @$REQUEST->user_id;//เพื่อให้ข้อมูล 2 table เชื่อมโยงกัน
+
+    CheckValue($type, "คุณยังไม่ได้เลือก type");
+
+
+
     $sql = "
         INSERT INTO member_sell (
             id, 
             type,
             weight,
-           user_id
+            p_id,
+            user_id
         ) VALUES (
             '".$id."', 
             '".$type."',
-            '".$weight."kg',
+            '".$weight."',
+            '".$p_id."',
             '".$user_id."'
         )
     ";

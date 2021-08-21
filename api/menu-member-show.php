@@ -3,7 +3,10 @@
 
     $id = $REQUEST->id;
 
-    $sql = "SELECT * FROM member_sell WHERE id='".$id."' ";
+    $sql = "SELECT * 
+    FROM member_sell 
+    INNER JOIN user 
+    ON member_sell.user_id = user.user_id WHERE id='".$id."' "; //คำสั่งดึงตาราง2ตารางมาเชื่อมกัน
 
     $obj = $DATABASE->QueryObj($sql);
 
