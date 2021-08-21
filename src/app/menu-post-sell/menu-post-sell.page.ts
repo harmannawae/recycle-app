@@ -11,12 +11,21 @@ export class MenuPostSellPage implements OnInit {
   type = "";
   weight = "";
   user_id = "";
+  types = [];
   constructor(
     private router: Router,
     public session: SessionService
   ) { }
   async ngOnInit() {
+    this.loadData();
     this.user_id = await this.session.getStorage("user_id");
+  }
+  loadData() {
+    this.session.ajax(this.session.api + "product-get.php", {}, true).then((res: any) => {
+      this.types = res.datas;
+    }).catch(err => {
+      this.session.showAlert(err);
+    });
   }
   async save() {
     // เอาข้อมูลบันทึกลงฐานข้อมูล

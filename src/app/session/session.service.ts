@@ -121,21 +121,61 @@ export class SessionService {
     return this.storage.remove(key);
   }
   public LinkTo(page, type = true) { // type=false ไม่จำ/ true=จำ
-    if (type == false) {
-        this.router.navigateByUrl(page, { replaceUrl: true }); // ไม่จำประวัติหน้าก่อนหน้า
-    } else {
-        this.router.navigateByUrl(page);  // จำประวัติหน้าก่อนหน้า
-    }
-}
-public LinkToParam(page, queryParams) {
-    let navigationExtras: NavigationExtras = {
-        queryParams: queryParams
-    };
-    this.router.navigate([page], navigationExtras);
-}
-public Back() { // ฟังก์ชันสำหรับถอยไปยังหน้าก่อนหน้า
-    this.nav.pop();
-}
+      if (type == false) {
+          this.router.navigateByUrl(page, { replaceUrl: true }); // ไม่จำประวัติหน้าก่อนหน้า
+      } else {
+          this.router.navigateByUrl(page);  // จำประวัติหน้าก่อนหน้า
+      }
+  }
+  public LinkToParam(page, queryParams) {
+      let navigationExtras: NavigationExtras = {
+          queryParams: queryParams
+      };
+      this.router.navigate([page], navigationExtras);
+  }
+  public Back() { // ฟังก์ชันสำหรับถอยไปยังหน้าก่อนหน้า
+      this.nav.pop();
+  }
+  public Login(username, password) {
+    this.ajax(this.api + "login.php", {
+      username: username,
+      password: password
+    }, true).then(async (res: any) => {
+      if (res.status ==true) {
+        await this.setStorage("user_id", res.data.user_id);//บันทึกคุกกี้ของ user คน คน เดี่ยวเพื่อแสดง  
+        await this.setStorage("username", username);
+        await this.setStorage("password", password);
+        await this.setStorage("user_type", res.data.user_type);
+        if (res.data.user_type == 'admin') {
+            this.LinkTo("tabs/tab1", false); //เมื่อไรเดอร์กดจะไปหน้า admin 
+        } else if (res.data.user_type == 'member'){
+          this.LinkTo("tabs/tab2", false);  //เมื่อไรเดอร์กดจะไปหน้า member 
+        }else if (res.data.user_type == 'rider'){
+          this.LinkTo("rider-menu", false); //เมื่อไรเดอร์กดจะไปหน้า rider 
+        }
+      } else {
+        this.showAlert(res.message);
+      }
+    }).catch(err => {
+      this.showAlert(err);
+    });
+  }
+  public Logout() {
+    this.showConfirm("คุณแน่ใจต้องการออกจากระบบใช่หรือไม่ ?").then(async rs => {
+      if (rs) {
+        await this.removeStorage("user_id"); //ให้ลบข้อมูลคุกกี้ออกเมื่อเรากดออกจากระบบ
+        await this.removeStorage("username"); //ให้ลบข้อมูลคุกกี้ออกเมื่อเรากดออกจากระบบ
+        await this.removeStorage("password"); //ให้ลบข้อมูลคุกกี้ออกเมื่อเรากดออกจากระบบ
+        await this.removeStorage("user_type"); //ให้ลบข้อมูลคุกกี้ออกเมื่อเรากดออกจากระบบ
+        this.LinkTo('/login', false);
+      }
+    });
+  }
+
+
+
+
+
 }
 
 

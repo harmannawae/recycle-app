@@ -32,13 +32,6 @@ export class ProfilePage implements OnInit  {
     });
   }
   async logout() {
-    this.session.showConfirm("คุณแน่ใจต้องการออกจากระบบใช่หรือไม่ ?").then(async rs => {
-      if (rs) {
-        await this.session.removeStorage("user_id");
-        await this.session.removeStorage("username");
-        await this.session.removeStorage("password");
-        this.router.navigateByUrl('/login', { replaceUrl: true }); // ให้วิ่งไปยังหน้า login ใหม่
-      }
-    });
+    this.session.Logout();
   }
 }

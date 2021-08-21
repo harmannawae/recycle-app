@@ -23,7 +23,7 @@ export class MenuPricePage implements OnInit {
     this.loadData();
   }
   loadData() {
-    this.session.ajax(this.session.api + "product-price.php", {}, true).then((res: any) => {
+    this.session.ajax(this.session.api + "product-get.php", {}, true).then((res: any) => {
       this.users = res.datas;
     }).catch(err => {
       this.session.showAlert(err);

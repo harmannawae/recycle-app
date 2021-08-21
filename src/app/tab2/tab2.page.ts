@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SessionService } from '../session/session.service';
 
 @Component({
   selector: 'app-tab2',
@@ -6,9 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['tab2.page.scss']
 })
 export class Tab2Page {
-
-    constructor() {}
-  
+    user_type;
+    constructor(
+      public session: SessionService
+    ) { }
+    async ionViewDidEnter() {
+      this.user_type = await this.session.getStorage("user_type");
+    }
   }
   
 

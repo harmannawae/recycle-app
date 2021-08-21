@@ -25,12 +25,42 @@
                 </a>
             </ion-col>
   
-            <ion-col class="menu-item">
-              <a routerLink="/menu-table">
-                  <img src="assets/icon/search.png">
-                  <div>ผู้ที่ขายแล้ว</div>
-              </a>
-          </ion-col>
+            <ion-col class="menu-item" *ngIf="user_type=='admin'">
+                <a routerLink="/menu-table">
+                    <img src="assets/icon/search.png">
+                    <div>ผู้ที่ขายแล้ว</div>
+                </a>
+            </ion-col>
+
+
+            <ion-col class="menu-item" *ngIf="user_type=='member'">
+                <a routerLink="/menu-member">
+                    <img src="assets/icon/all.png">
+                    <div>Member1</div>
+                </a>
+            </ion-col>
+            <ion-col class="menu-item" *ngIf="user_type=='member'">
+                <a routerLink="/menu-member">
+                    <img src="assets/icon/all.png">
+                    <div>Member2</div>
+                </a>
+            </ion-col>
+
+            <ion-col class="menu-item" *ngIf="user_type=='rider'">
+                <a routerLink="/menu-member">
+                    <img src="assets/icon/all.png">
+                    <div>Rider1</div>
+                </a>
+            </ion-col>
+            <ion-col class="menu-item" *ngIf="user_type=='rider'">
+                <a routerLink="/menu-member">
+                    <img src="assets/icon/all.png">
+                    <div>Rider2</div>
+                </a>
+            </ion-col>
+
+
+
         </ion-row>
         
     </ion-grid>
