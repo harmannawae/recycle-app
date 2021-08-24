@@ -12,10 +12,6 @@ const routes: Routes = [
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
   {
-    path: 'menu-price',
-    loadChildren: () => import('./menu-price/menu-price.module').then( m => m.MenuPricePageModule)
-  },
-  {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then( m => m.ProfilePageModule)
   },
@@ -60,10 +56,41 @@ const routes: Routes = [
   {
     path: 'menu-member-show/:id',
     loadChildren: () => import('./menu-member-show/menu-member-show.module').then( m => m.MenuMemberShowPageModule)
-  },  {
+  },
+  {
     path: 'menu-member-get',
     loadChildren: () => import('./menu-member-get/menu-member-get.module').then( m => m.MenuMemberGetPageModule)
   },
+  {
+    path: 'product-get',
+    loadChildren: () => import('./product-get/product-get.module').then( m => m.ProductGetPageModule)
+  },
+  {
+    path: 'product-get-edit/:id',
+    loadChildren: () => import('./product-get-edit/product-get-edit.module').then( m => m.ProductGetEditPageModule)
+  },
+  {
+    path: 'product-add',
+    loadChildren: () => import('./product-add/product-add.module').then( m => m.ProductAddPageModule)
+  },
+  {
+    path: 'history',
+    loadChildren: () => import('./history/history.module').then( m => m.HistoryPageModule)
+  },
+  {
+    path: 'manage-member',
+    loadChildren: () => import('./manage-member/manage-member.module').then( m => m.ManageMemberPageModule)
+  },
+  {
+    path: 'member-edit/:id',
+    loadChildren: () => import('./member-edit/member-edit.module').then( m => m.MemberEditPageModule)
+  },  {
+    path: 'register-admin',
+    loadChildren: () => import('./register-admin/register-admin.module').then( m => m.RegisterAdminPageModule)
+  },
+
+
+
 
   
   

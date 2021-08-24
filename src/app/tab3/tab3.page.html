@@ -7,13 +7,43 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-button 
-   id="btn-save" 
-   class="btn-logout"
-   color="non" 
-   expand="block" 
-   size="small" 
-   routerLink="/profile">โปรไฟล์</ion-button>
+   <ion-button 
+        id="btn-save" 
+        class="btn-logout"
+        color="non" 
+        expand="block" 
+        size="small" 
+        routerLink="/profile"> 
+            <div>
+              โปรไฟล์
+            </div>
+    </ion-button>
+
+    <ion-button 
+            id="btn-save" 
+            class="btn-logout"
+            color="non" 
+            expand="block" 
+            size="small" 
+            *ngIf="user_type=='admin'"
+            routerLink="/manage-member"> 
+                <div>
+                  จัดการข้อมูลสมาชิก
+                </div>
+    </ion-button>
+
+    <ion-button 
+            id="btn-save" 
+            class="btn-logout"
+            color="non" 
+            expand="block" 
+            size="small" 
+            *ngIf="user_type=='admin'"
+            routerLink="/product-get"> 
+                <div>
+                  จัดการข้อมูลราคาขยะ
+                </div>
+    </ion-button>
   <ion-button  class="btn-logout" color="non" expand="block" size="small" (click)="logout()">ออกจากระบบ</ion-button>
 
 </ion-content>

@@ -3,12 +3,12 @@ import { AlertController } from '@ionic/angular';
 import { SessionService } from '../session/session.service';
 
 @Component({
-  selector: 'app-menu-price',
-  templateUrl: './menu-price.page.html',
-  styleUrls: ['./menu-price.page.scss'],
+  selector: 'app-manage-member',
+  templateUrl: './manage-member.page.html',
+  styleUrls: ['./manage-member.page.scss'],
 })
-export class MenuPricePage implements OnInit {
-  products = [];
+export class ManageMemberPage implements OnInit {
+  users = [];
 
   constructor(
     public alertController: AlertController,
@@ -23,8 +23,8 @@ export class MenuPricePage implements OnInit {
     this.loadData();
   }
   loadData() {
-    this.session.ajax(this.session.api + "product-get.php", {}, true).then((res: any) => {
-      this.products = res.datas;
+    this.session.ajax(this.session.api + "member.php", {}, true).then((res: any) => {
+      this.users = res.datas;
     }).catch(err => {
       this.session.showAlert(err);
     });
@@ -33,7 +33,7 @@ export class MenuPricePage implements OnInit {
     this.session.showConfirm('คุณแน่ใจต้องการลบข้อมูลนี้ใช่หรือไม่ ?').then(rs => {
       if (rs) {
         this.session.ajax(this.session.api + "member-del.php", {
-          p_id: id
+          user_id: id
         }, true).then((res: any) => {
           this.loadData();
         }).catch(err => {
@@ -43,3 +43,4 @@ export class MenuPricePage implements OnInit {
     });
   }
 }
+  

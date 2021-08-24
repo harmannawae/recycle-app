@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>ราคาขยะ</ion-title>
+      <ion-buttons slot="end" *ngIf="user_type=='admin'">
+        <ion-button routerLink="/product-add">
+            <ion-icon name="add-circle-outline"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-item *ngFor="let p of products">
+        <ion-grid>
+            <ion-row >
+              <ion-col>
+                <div>
+                    <h2>
+                        {{ p.p_name }}
+                    </h2>
+                </div>
+              </ion-col>
+              <ion-col>
+                <div>
+                    <h2>
+                        {{ p.p_price }} กก. บาท
+                    </h2>
+                </div>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        <ion-buttons slot="end" *ngIf="user_type=='admin'">
+            <ion-button color="warning"  routerLink="/product-get-edit/{{ p.p_id }}">
+                <ion-icon slot="icon-only" name="create-outline"></ion-icon>
+            </ion-button>
+            <ion-button color="danger" (click)="del(p.p_id)">
+                <ion-icon slot="icon-only" name="trash-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-item>
+</ion-content>

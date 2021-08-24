@@ -12,6 +12,7 @@ export class ProfilePage implements OnInit  {
   user_lastname = "";
   user_phone ="";
   username = "";
+  user_type;
   constructor(
     public session: SessionService,
     private router: Router,
@@ -33,5 +34,8 @@ export class ProfilePage implements OnInit  {
   }
   async logout() {
     this.session.Logout();
+  }
+  async ionViewDidEnter() {
+    this.user_type = await this.session.getStorage("user_type");
   }
 }

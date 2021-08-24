@@ -8,6 +8,8 @@
 </ion-header>
 
 <ion-content>
+  <div  class="menu-item"*ngIf="user_type=='admin'">admin</div>
+  <div  class="menu-item"*ngIf="user_type=='rider'">rider</div>
   <img src="assets/icon/profile.png" class="image">
   <div class="fullname">{{ user_name }} {{ user_lastname }}</div>
   <div class="phone">{{ user_phone }}</div>

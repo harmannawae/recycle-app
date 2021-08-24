@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>จัดการสมาข้อมูลผู้ใช้</ion-title>
+      <ion-buttons slot="end">
+        <ion-button routerLink="/register-admin">
+            <ion-icon name="add-circle-outline"></ion-icon>
+        </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card class="menu-item" *ngFor="let user of users">
+      <ion-card-content>
+          <div class="menu-item2">ชื่อ:  {{ user.user_name }} {{ user.user_lastname }}</div>
+          <div class="menu-item2">เบอร์โทรศัพท์: {{ user.user_phone }}</div>
+          <div class="menu-item2">ที่อยู่: {{ user.user_address }}</div>
+          <div class="menu-item2">สถานะ: {{ user.user_type }}</div>
+
+          <ion-button
+              color="warning"
+              expand="block"
+              size="small"
+              routerLink="/member-edit/{{ user.user_id }}">
+              <div>
+                แก้ไข
+              </div>
+          </ion-button>
+          <ion-button
+              color="danger"
+              expand="block"
+              (click)="del(user.user_id)"
+              size="small">
+              <div>
+                ลบ
+              </div>
+          </ion-button>
+      </ion-card-content>
+  </ion-card>
+</ion-content>
