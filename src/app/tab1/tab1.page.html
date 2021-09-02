@@ -1,10 +1,28 @@
-<ion-header [translucent]="true">
-  <ion-toolbar color="tertiary">
-      <ion-title>
-          หน้าแรก
-      </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-header [translucent]="true" *ngIf="user_type=='admin'">
+    <ion-toolbar color="warning" >
+        <ion-title>
+            สำหรับadmin
+        </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-header [translucent]="true" *ngIf="user_type=='member'">
+    <ion-toolbar color="tertiary" >
+        <ion-title>
+            สำหรับผู้ขายขยะ
+        </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-header [translucent]="true"  *ngIf="user_type=='rider'">
+      <ion-toolbar color="success" >
+          <ion-title>
+            สำหรับผู้รับซื้อขยะ
+          </ion-title> 
+      </ion-toolbar>
+    </ion-header>
+  <!--สิ้นสุด header-->
+
 
 <ion-content [fullscreen]="true">
   <ion-grid>
@@ -34,20 +52,14 @@
           </ion-col>
 
           <ion-col class="menu-item">
-            <a routerLink="/menu-table">
-                <img src="assets/icon/table.png">
-                <div>ตาราง</div>
-            </a>
-        </ion-col>
-      </ion-row>
-
-      <ion-row>
-        <ion-col class="menu-item">
             <a routerLink="/menu-newspaper">
                 <img src="assets/icon/newspaper.png">
                 <div>ข่าวสาร</div>
             </a>
         </ion-col>
+      </ion-row>
+      <ion-row>
+     <!--สำหรับบรรทัดถัดไป-->
     </ion-row>
   </ion-grid>
 </ion-content>

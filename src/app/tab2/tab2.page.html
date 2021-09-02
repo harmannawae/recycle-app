@@ -1,8 +1,27 @@
-<ion-header [translucent]="true">
-    <ion-toolbar color="tertiary">
-        <ion-title> ขายขยะ </ion-title>
+<ion-header [translucent]="true" *ngIf="user_type=='admin'">
+    <ion-toolbar color="warning" >
+        <ion-title>
+            สำหรับadmin
+        </ion-title>
     </ion-toolbar>
-</ion-header>
+  </ion-header>
+  
+  <ion-header [translucent]="true" *ngIf="user_type=='member'">
+    <ion-toolbar color="tertiary" >
+        <ion-title>
+            สำหรับผู้ขายขยะ
+        </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-header [translucent]="true"  *ngIf="user_type=='rider'">
+      <ion-toolbar color="success" >
+          <ion-title>
+            สำหรับผู้รับซื้อขยะ
+          </ion-title> 
+      </ion-toolbar>
+    </ion-header>
+  <!--สิ้นสุด header-->
 
 <ion-content [fullscreen]="true">
 
@@ -34,9 +53,9 @@
                 </a>
             </ion-col>
             <ion-col class="menu-item" *ngIf="user_type=='member'">
-                <a routerLink="/history">
+                <a routerLink="/history-member">
                     <img src="assets/icon/checklist.png">
-                    <div>ประวัติ</div>
+                    <div>ประวัติการขายขยะที่ผ่านมา</div>
                 </a>
             </ion-col>
 
@@ -48,7 +67,12 @@
                     <div>รายการลงขาย</div>
                 </a>
             </ion-col>
-            
+            <ion-col class="menu-item" *ngIf="user_type=='rider'">
+                <a routerLink="/history-rider">
+                    <img src="assets/icon/checklist.png">
+                    <div>ประวัติการซื้อขยะที่ผ่านมา</div>
+                </a>
+            </ion-col>
         </ion-row>
     </ion-grid>
 </ion-content>

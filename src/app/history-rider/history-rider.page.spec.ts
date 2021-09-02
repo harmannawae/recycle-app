@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { MenuMapPage } from './menu-map.page';
+import { HistoryRiderPage } from './history-rider.page';
 
-describe('MenuMapPage', () => {
-  let component: MenuMapPage;
-  let fixture: ComponentFixture<MenuMapPage>;
+describe('HistoryRiderPage', () => {
+  let component: HistoryRiderPage;
+  let fixture: ComponentFixture<HistoryRiderPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ MenuMapPage ],
+      declarations: [ HistoryRiderPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(MenuMapPage);
+    fixture = TestBed.createComponent(HistoryRiderPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

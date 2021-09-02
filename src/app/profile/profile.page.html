@@ -1,15 +1,41 @@
-<ion-header>
-  <ion-toolbar color="tertiary">
+<ion-header [translucent]="true" *ngIf="user_type=='admin'">
+  <ion-toolbar color="warning" >
     <ion-buttons slot="start">
-         <ion-back-button></ion-back-button>
-    </ion-buttons>
-     <ion-title>{{ user_name }} {{ user_lastname }}</ion-title>
+      <ion-back-button></ion-back-button>
+ </ion-buttons>
+      <ion-title>
+        {{ user_name }} {{ user_lastname }}
+      </ion-title>
   </ion-toolbar>
 </ion-header>
 
+<ion-header [translucent]="true" *ngIf="user_type=='member'">
+  <ion-toolbar color="tertiary" >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+ </ion-buttons>
+      <ion-title>
+        {{ user_name }} {{ user_lastname }}
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header [translucent]="true"  *ngIf="user_type=='rider'">
+    <ion-toolbar color="success" >
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+   </ion-buttons>
+        <ion-title>
+          {{ user_name }} {{ user_lastname }}
+        </ion-title> 
+    </ion-toolbar>
+  </ion-header>
+<!--สิ้นสุด header-->
+
 <ion-content>
   <div  class="menu-item"*ngIf="user_type=='admin'">admin</div>
-  <div  class="menu-item"*ngIf="user_type=='rider'">rider</div>
+  <div  class="menu-item"*ngIf="user_type=='rider'">ผู้ซื้อ</div>
+  <div  class="menu-item"*ngIf="user_type=='member'">ผู้ขาย</div>
   <img src="assets/icon/profile.png" class="image">
   <div class="fullname">{{ user_name }} {{ user_lastname }}</div>
   <div class="phone">{{ user_phone }}</div>

@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MenuMapPageRoutingModule } from './menu-map-routing.module';
+import { NewspaperEditPageRoutingModule } from './newspaper-edit-routing.module';
 
-import { MenuMapPage } from './menu-map.page';
+import { NewspaperEditPage } from './newspaper-edit.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MenuMapPageRoutingModule
+    NewspaperEditPageRoutingModule
   ],
-  declarations: [MenuMapPage]
+  declarations: [NewspaperEditPage]
 })
-export class MenuMapPageModule {}
+export class NewspaperEditPageModule {}

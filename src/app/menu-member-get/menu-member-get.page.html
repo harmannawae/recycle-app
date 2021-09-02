@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-toolbar color="tertiary">
+  <ion-toolbar color="success">
 
       <ion-buttons slot="start">
           <ion-back-button></ion-back-button>
@@ -12,13 +12,28 @@
 
 <ion-content>
     <div>
-      <ion-card *ngFor="let user of users" class="menu-item" routerLink="/menu-member-show/{{ user.id }}" >
+      <ion-card *ngFor="let user of users" class="menu-item" >
       <ion-card-content>
-        <h2>ประเภทขยะ: {{ user.p_name }}</h2>
-        <h2>น้ำหนัก: {{ user.weight }} กก.</h2>
-        <h2>ราคาต่อ กก.: {{ user.p_price }} บาท</h2>
-        <h2>ราคารวม: {{ user.total }} บาท</h2>
+        <h2 >ประเภทขยะ: {{ user.p_name }}</h2>
+        <h2 >น้ำหนัก: {{ user.weight }} กก.</h2>
+        <h2 >ราคาต่อ กก.: {{ user.p_price }} บาท</h2>
+        <h2 >ราคารวม: {{ user.total }} บาท</h2>
         </ion-card-content>
+        <ion-button
+                color="danger"
+                expand="block"
+                size="small"
+                routerLink="/menu-member-show/{{ user.id }}">
+                รายละเอียด
+            </ion-button>
+        <ion-button
+                color="danger"
+                expand="block"
+                size="small"
+                (click)="del(user.id)"
+                routerLink="/location">
+                รับออเดอร์
+         </ion-button>
       </ion-card>
     </div>
 </ion-content>

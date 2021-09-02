@@ -20,10 +20,6 @@ const routes: Routes = [
     loadChildren: () => import('./menu-newspaper/menu-newspaper.module').then( m => m.MenuNewspaperPageModule)
   },
   {
-    path: 'menu-table',
-    loadChildren: () => import('./menu-table/menu-table.module').then( m => m.MenuTablePageModule)
-  },
-  {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
@@ -39,10 +35,6 @@ const routes: Routes = [
   {
     path: 'test',
     loadChildren: () => import('./test/test.module').then( m => m.TestPageModule)
-  },
-  {
-    path: 'menu-map',
-    loadChildren: () => import('./menu-map/menu-map.module').then( m => m.MenuMapPageModule)
   },
   {
     path: 'menu-post-sell',
@@ -74,25 +66,41 @@ const routes: Routes = [
     loadChildren: () => import('./product-add/product-add.module').then( m => m.ProductAddPageModule)
   },
   {
-    path: 'history',
-    loadChildren: () => import('./history/history.module').then( m => m.HistoryPageModule)
-  },
-  {
     path: 'manage-member',
     loadChildren: () => import('./manage-member/manage-member.module').then( m => m.ManageMemberPageModule)
   },
   {
     path: 'member-edit/:id',
     loadChildren: () => import('./member-edit/member-edit.module').then( m => m.MemberEditPageModule)
-  },  {
+  },
+  {
     path: 'register-admin',
     loadChildren: () => import('./register-admin/register-admin.module').then( m => m.RegisterAdminPageModule)
+  },
+ 
+  {
+    path: 'history-member',
+    loadChildren: () => import('./history-member/history-member.module').then( m => m.HistoryMemberPageModule)
+  },
+  {
+    path: 'order-confirm',
+    loadChildren: () => import('./order-confirm/order-confirm.module').then( m => m.OrderConfirmPageModule)
+  },
+  {
+    path: 'history-rider',
+    loadChildren: () => import('./history-rider/history-rider.module').then( m => m.HistoryRiderPageModule)
+  },
+  {
+    path: 'menu-newspaper-add',
+    loadChildren: () => import('./menu-newspaper-add/menu-newspaper-add.module').then( m => m.MenuNewspaperAddPageModule)
+  },
+  {
+    path: 'newspaper-edit/:id',
+    loadChildren: () => import('./newspaper-edit/newspaper-edit.module').then( m => m.NewspaperEditPageModule)
   },
 
 
 
-
-  
   
 ];
 @NgModule({

@@ -1,5 +1,5 @@
 <ion-header>
-    <ion-toolbar color="tertiary">
+    <ion-toolbar color="success">
         <ion-buttons slot="start">
             <ion-back-button></ion-back-button>
         </ion-buttons>
@@ -10,19 +10,10 @@
 <ion-content>
     <ion-card class="menu-item">
         <ion-card-content>
-            <div class="menu-item2">ประเภท: {{ p_type }}</div>
-            <div class="menu-item2">น้ำหนัก: {{ weight }}</div>
             <div class="menu-item2">ชื่อ: {{ user_name }} {{ user_lastname }}</div>
             <div class="menu-item2">เบอร์โทรศัพท์: {{ user_phone }}</div>
             <div class="menu-item2">ที่อยู่: {{ user_address }}</div>
-
-            <ion-button
-                color="danger"
-                expand="block"
-                size="small"
-                routerLink="/location">
-                เปิดแผนที่
-            </ion-button>
+            <div class="menu-item2" routerLink="/location">ดูแผนที่: คลิก</div>
         </ion-card-content>
     </ion-card>
 </ion-content>

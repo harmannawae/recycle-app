@@ -15,6 +15,7 @@
     <ion-select placeholder="โปรดเลือก" [(ngModel)]="type">
       <ion-select-option *ngFor="let t of types" value="{{ t.p_id }}">{{ t.p_name }} ราคา {{ t.p_price }} บ./กก.</ion-select-option>
     </ion-select>
+
   </ion-item>
   <ion-item>
     <ion-label position="floating">น้ำหนัก</ion-label>
@@ -24,6 +25,6 @@
 
 <ion-footer translucent="true" class="ion-no-border" mode="md">
   <ion-toolbar color="translucent">
-    <ion-button expand="block" class="main-button" (click)="save()">Continue</ion-button>
+    <ion-button expand="block" class="main-button" (click)="save()">บันทึก</ion-button>
   </ion-toolbar>
 </ion-footer>

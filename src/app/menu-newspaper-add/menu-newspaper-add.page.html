@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>ขายขยะ</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-item>
+    <ion-label>ประเภทข่าว</ion-label>
+    <ion-select placeholder="โปรดเลือก" [(ngModel)]="n_title">
+      <ion-select-option value="คู่มือ">คู่มือ</ion-select-option>
+      <ion-select-option value="ข่าวสาร">ข่าวสาร</ion-select-option>
+    </ion-select>
+
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">ชื่อข่าว</ion-label>
+    <ion-input [(ngModel)]="n_name"></ion-input>
+  </ion-item>
+
+<ion-item>
+  <ion-label position="floating" >เนื้อหา</ion-label>
+  <ion-textarea  [(ngModel)]="n_content" rows="6" cols="20" placeholder="กรุณาป้อนเนื้อหา..."></ion-textarea>
+</ion-item>
+  
+
+<ion-footer translucent="true" class="ion-no-border" mode="md">
+  <ion-toolbar color="translucent">
+    <ion-button expand="block" class="main-button" (click)="save()">บันทึก</ion-button>
+  </ion-toolbar>
+</ion-footer>
+
+</ion-content>

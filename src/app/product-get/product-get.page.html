@@ -1,16 +1,42 @@
-<ion-header>
-  <ion-toolbar color="tertiary">
+<ion-header [translucent]="true" *ngIf="user_type=='admin'">
+    <ion-toolbar color="warning" >
       <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+   </ion-buttons>
+        <ion-title>
+          ราคาขยะ
+        </ion-title>
+        <ion-buttons slot="primary">
+            <ion-button routerLink="/product-add">
+                <ion-icon name="add-circle-outline"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-header [translucent]="true" *ngIf="user_type=='member'">
+    <ion-toolbar color="tertiary" >
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+   </ion-buttons>
+        <ion-title>
+          ราคาขยะ
+        </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-header [translucent]="true"  *ngIf="user_type=='rider'">
+      <ion-toolbar color="success" >
+        <ion-buttons slot="start">
           <ion-back-button></ion-back-button>
-      </ion-buttons>
-      <ion-title>ราคาขยะ</ion-title>
-      <ion-buttons slot="end" *ngIf="user_type=='admin'">
-        <ion-button routerLink="/product-add">
-            <ion-icon name="add-circle-outline"></ion-icon>
-        </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
-</ion-header>
+     </ion-buttons>
+          <ion-title>
+            ราคาขยะ
+          </ion-title> 
+      </ion-toolbar>
+    </ion-header>
+  <!--สิ้นสุด header-->
+  
 
 <ion-content>
     <ion-item *ngFor="let p of products">

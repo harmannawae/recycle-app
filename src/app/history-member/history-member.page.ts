@@ -3,11 +3,11 @@ import { AlertController } from '@ionic/angular';
 import { SessionService } from '../session/session.service';
 
 @Component({
-  selector: 'app-history',
-  templateUrl: './history.page.html',
-  styleUrls: ['./history.page.scss'],
+  selector: 'app-history-member',
+  templateUrl: './history-member.page.html',
+  styleUrls: ['./history-member.page.scss'],
 })
-export class HistoryPage implements OnInit {
+export class HistoryMemberPage implements OnInit {
   users = [];
   user_id = "";
   constructor(
@@ -25,7 +25,7 @@ export class HistoryPage implements OnInit {
     this.loadData();
   }
   loadData() {
-    this.session.ajax(this.session.api + "member-sell.php", {
+    this.session.ajax(this.session.api + "history-member.php", {
       user_id: this.user_id
     }, true).then((res: any) => {
       this.users = res.datas;
