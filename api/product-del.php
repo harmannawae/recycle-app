@@ -1,9 +1,9 @@
 <?php
     include("config/autoload.php");
 
-    $user_id = $REQUEST->user_id;
+    $p_id = $REQUEST->p_id;
     $sql = "
-        DELETE FROM user WHERE user_id='".$user_id."'
+        DELETE FROM product WHERE p_id='".$p_id."'
     ";
     $obj = $DATABASE->Query($sql);
 

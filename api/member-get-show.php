@@ -1,11 +1,13 @@
 <?php
     include("config/autoload.php");
 
-    $sql = "SELECT * FROM user";
+    $user_id = $REQUEST->user_id;
+
+    $sql = "SELECT * FROM user WHERE user_id='".$user_id."' ";
 
     $obj = $DATABASE->QueryObj($sql);
 
     echo json_encode(array(
         "status"=>true,
-        "datas"=>$obj
+        "data"=>$obj[0]
     ));

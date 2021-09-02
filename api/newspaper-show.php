@@ -1,11 +1,13 @@
 <?php
     include("config/autoload.php");
 
-    $sql = "SELECT * FROM user";
+    $n_id = $REQUEST->n_id;
+
+    $sql = "SELECT * FROM newspaper WHERE n_id='".$n_id."' ";
 
     $obj = $DATABASE->QueryObj($sql);
 
     echo json_encode(array(
         "status"=>true,
-        "datas"=>$obj
+        "data"=>$obj[0]
     ));

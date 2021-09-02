@@ -1,20 +1,24 @@
 <?php
     include("config/autoload.php");
 
-    $member_id = $REQUEST->member_id;
-    $member_name = $REQUEST->member_name;
-    $member_sname = $REQUEST->member_sname;
-    $member_phone = $REQUEST->member_phone;
+    $user_id = $REQUEST->user_id;
+    $user_name = $REQUEST->user_name;
+    $user_lastname = $REQUEST->user_lastname;
+    $user_phone = $REQUEST->user_phone;
+    $user_address = $REQUEST->user_address;
     $username = $REQUEST->username;
     $password = $REQUEST->password;
+    $user_type = $REQUEST->user_type;
     $sql = "
-        UPDATE member SET
-            member_name='".$member_name."',
-            member_sname='".$member_sname."',
-            member_phone='".$member_phone."',
-            username'".$username."',
-            password'".$password."'
-        WHERE member_id='".$member_id."'
+        UPDATE user SET
+            user_name='".$user_name."',
+            user_lastname='".$user_lastname."',
+            user_phone='".$user_phone."',
+            user_address='".$user_address."',
+            username='".$username."',
+            password='".$password."',
+            user_type='".$user_type."'
+        WHERE user_id='".$user_id."'
     ";
     $obj = $DATABASE->Query($sql);
 
