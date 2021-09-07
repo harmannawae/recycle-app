@@ -20,6 +20,7 @@ export class Tab3Page {
   async logout() {
     this.session.Logout();
   }
+  //โชว์บางเมนู 
   async ionViewDidEnter() {
     this.user_type = await this.session.getStorage("user_type");
   }
