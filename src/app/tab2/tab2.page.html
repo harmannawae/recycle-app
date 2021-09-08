@@ -62,13 +62,13 @@
              <!--สำหรับrider-->
              <!--แสดงเมนูสำหรับrider คำสั่ง  *ngIf="user_type=='rider'" -->
              <ion-col class="menu-item" *ngIf="user_type=='rider'">
-                <a routerLink="/menu-member-get">
+                <a routerLink="/order-get">
                     <img src="assets/icon/list.png">
                     <div>รายการลงขาย</div>
                 </a>
             </ion-col>
             <ion-col class="menu-item" *ngIf="user_type=='rider'">
-                <a routerLink="/history-rider">
+                <a routerLink="/order-history-rider">
                     <img src="assets/icon/checklist.png">
                     <div>ประวัติการซื้อขยะที่ผ่านมา</div>
                 </a>

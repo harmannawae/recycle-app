@@ -49,10 +49,7 @@ const routes: Routes = [
     path: 'menu-member-show/:id',
     loadChildren: () => import('./menu-member-show/menu-member-show.module').then( m => m.MenuMemberShowPageModule)
   },
-  {
-    path: 'menu-member-get',
-    loadChildren: () => import('./menu-member-get/menu-member-get.module').then( m => m.MenuMemberGetPageModule)
-  },
+  
   {
     path: 'product-get',
     loadChildren: () => import('./product-get/product-get.module').then( m => m.ProductGetPageModule)
@@ -83,12 +80,8 @@ const routes: Routes = [
     loadChildren: () => import('./history-member/history-member.module').then( m => m.HistoryMemberPageModule)
   },
   {
-    path: 'order-confirm',
+    path: 'order-confirm/:id',
     loadChildren: () => import('./order-confirm/order-confirm.module').then( m => m.OrderConfirmPageModule)
-  },
-  {
-    path: 'history-rider',
-    loadChildren: () => import('./history-rider/history-rider.module').then( m => m.HistoryRiderPageModule)
   },
   {
     path: 'menu-newspaper-add',
@@ -98,6 +91,16 @@ const routes: Routes = [
     path: 'newspaper-edit/:id',
     loadChildren: () => import('./newspaper-edit/newspaper-edit.module').then( m => m.NewspaperEditPageModule)
   },
+  {
+    path: 'order-get',
+    loadChildren: () => import('./order-get/order-get.module').then( m => m.OrderGetPageModule)
+  },
+  {
+    path: 'order-history-rider',
+    loadChildren: () => import('./order-history-rider/order-history-rider.module').then( m => m.OrderHistoryRiderPageModule)
+  },
+
+
 
 
 

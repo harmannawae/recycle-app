@@ -4,11 +4,11 @@ import { AlertController } from '@ionic/angular';
 import { SessionService } from '../session/session.service';
 
 @Component({
-  selector: 'app-menu-member-get',
-  templateUrl: './menu-member-get.page.html',
-  styleUrls: ['./menu-member-get.page.scss'],
+  selector: 'app-order-history-rider',
+  templateUrl: './order-history-rider.page.html',
+  styleUrls: ['./order-history-rider.page.scss'],
 })
-export class MenuMemberGetPage implements OnInit {
+export class OrderHistoryRiderPage implements OnInit {
   user_id = "";
   users = [];
 
@@ -26,19 +26,10 @@ export class MenuMemberGetPage implements OnInit {
     this.loadData();
   }
   loadData() {
-    this.session.ajax(this.session.api + "member-get.php", {}, true).then((res: any) => {
+    this.session.ajax(this.session.api + "order-history-rider.php", {}, true).then((res: any) => {
       this.users = res.datas;
     }).catch(err => {
       this.session.showAlert(err);
     });
   }
-  async del(id) {
-        this.session.ajax(this.session.api + "member-get-del.php", {
-          id: id
-        }, true).then((res: any) => {
-          this.loadData();
-        }).catch(err => {
-          this.session.showAlert(err);
-        });
-      }
-    }
+}

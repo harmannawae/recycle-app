@@ -2,8 +2,6 @@
     include("config/autoload.php");
 
     $user_id = @$REQUEST->user_id;
-
-    //$sql = "SELECT * FROM member_sell WHERE user_id='".$user_id."' ";
     $sql = "
         SELECT 
             member_sell.*,

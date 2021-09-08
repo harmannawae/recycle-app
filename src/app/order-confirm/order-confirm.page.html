@@ -1,31 +1,32 @@
-<ion-header>
-  <ion-toolbar color="success">
-
+<ion-header [translucent]="true">
+    <ion-toolbar color="success" >
       <ion-buttons slot="start">
-          <ion-back-button></ion-back-button>
-      </ion-buttons>
+        <ion-back-button></ion-back-button>
+   </ion-buttons>
+        <ion-title>
+          ตรวจสอบรายละเอียด
+        </ion-title> 
+    </ion-toolbar>
+  </ion-header>
+<!--สิ้นสุด header-->
 
-      <ion-title>ตรวจสอบรายการอีกครั้ง</ion-title>
-      
-  </ion-toolbar>
-</ion-header>
-
-<ion-content>
-    <div>
-      <ion-card class="menu-item" >
-      <ion-card-content>
-        <h2 >ประเภทขยะ: พลาสติกใส่</h2>
-        <h2 >น้ำหนัก: 5 กก.</h2>
-        <h2 >ราคาต่อ กก.: 5 บาท</h2>
-        <h2 >ราคารวม: 25 บาท</h2>
-        </ion-card-content>
-        <ion-button
-                color="danger"
-                expand="block"
-                size="small"
-                routerLink="/history-rider">
-                ยืนยันรับซื้อ
-         </ion-button>
-      </ion-card>
-    </div>
+<ion-content  class="bg">
+  <ion-item color="non">
+    <ion-label position="floating">ประเภท</ion-label>
+    <ion-input [(ngModel)]="p_name"></ion-input>
+  </ion-item>
+  <ion-item color="non">
+    <ion-label position="floating">น้ำหนัก</ion-label>
+    <ion-input [(ngModel)]="weight"></ion-input>
+  </ion-item>
+  <ion-item color="non">
+    <ion-label position="floating">ราคาต่อ กก.</ion-label>
+    <ion-input [(ngModel)]="p_price"></ion-input>
+  </ion-item>
+  <ion-item color="non">
+    <ion-label position="floating">ราคารวม</ion-label>
+    <ion-input [(ngModel)]="total"></ion-input>
+  </ion-item>
+<ion-button id="btn-save" color="warning" expand="block" size="large" (click)="save()">ยืนยันการรับออเดอร์</ion-button>
+<ion-button id="btn-save" color="warning" expand="block" size="large"  (click)="del(user.m_id)">กลับหน้าหลัก</ion-button>
 </ion-content>

@@ -5,7 +5,7 @@
           <ion-back-button></ion-back-button>
       </ion-buttons>
 
-      <ion-title>รายการลงขาย</ion-title>
+      <ion-title>ประวัติการซื้อขยะที่ผ่านมา</ion-title>
       
   </ion-toolbar>
 </ion-header>
@@ -19,21 +19,6 @@
         <h2 >ราคาต่อ กก.: {{ user.p_price }} บาท</h2>
         <h2 >ราคารวม: {{ user.total }} บาท</h2>
         </ion-card-content>
-        <ion-button
-                color="danger"
-                expand="block"
-                size="small"
-                routerLink="/menu-member-show/{{ user.id }}">
-                รายละเอียด
-            </ion-button>
-        <ion-button
-                color="danger"
-                expand="block"
-                size="small"
-                (click)="del(user.id)"
-                routerLink="/location">
-                รับออเดอร์
-         </ion-button>
       </ion-card>
     </div>
 </ion-content>

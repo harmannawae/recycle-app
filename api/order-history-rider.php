@@ -4,12 +4,11 @@
     $user_id = @$REQUEST->user_id;
     $sql = "
         SELECT 
-            member_sell.*,
+            order_history.*,
             product.*,
-            member_sell.weight*product.p_price AS total 
-        FROM member_sell 
-            INNER JOIN product ON product.p_id=member_sell.type
-        WHERE member_sell.user_id='".$user_id."'
+            order_history.weight*product.p_price AS total 
+        FROM order_history 
+            INNER JOIN product ON product.p_id=order_history.type
     ";
     $obj = $DATABASE->QueryObj($sql);
 

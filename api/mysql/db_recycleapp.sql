@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 02, 2021 at 10:27 PM
+-- Generation Time: Sep 08, 2021 at 10:59 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.25
 
@@ -215,7 +215,19 @@ INSERT INTO `location` (`lat`, `lng`) VALUES
 ('6.532050032285', '101.28551307095'),
 ('6.532050032285', '101.28551307095'),
 ('6.5320441921149', '101.28551029687'),
-('6.5320614212886', '101.28550499591');
+('6.5320614212886', '101.28550499591'),
+('6.5320501492301', '101.28550817049'),
+('6.4028', '101.7065'),
+('6.4028', '101.7065'),
+('6.4028', '101.7065'),
+('6.4028', '101.7065'),
+('6.4028', '101.7065'),
+('6.4028', '101.7065'),
+('6.4028', '101.7065'),
+('6.4028', '101.7065'),
+('6.4028', '101.7065'),
+('6.4028', '101.7065'),
+('6.5320882454383', '101.28550601139');
 
 -- --------------------------------------------------------
 
@@ -235,11 +247,10 @@ CREATE TABLE `member_sell` (
 --
 
 INSERT INTO `member_sell` (`id`, `type`, `weight`, `user_id`) VALUES
-(5, '3', '22', 1),
-(6, '5', '4', 1),
-(8, '2', '5', 1),
-(9, '3', '6', 1),
-(10, '5', '2', 1);
+(12, '2', '5', 1),
+(13, '5', '42', 4),
+(14, '5', '4', 4),
+(15, '1', '10', 4);
 
 -- --------------------------------------------------------
 
@@ -264,17 +275,24 @@ INSERT INTO `newspaper` (`n_id`, `n_title`, `n_name`, `n_content`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `order`
+-- Table structure for table `order_history`
 --
 
-CREATE TABLE `order` (
-  `d_id` int(11) NOT NULL,
-  `d_type` varchar(100) NOT NULL,
-  `d_price` varchar(100) NOT NULL,
-  `d_weight` varchar(100) NOT NULL,
-  `d_totalprice` varchar(100) NOT NULL,
-  `user_id` int(11) NOT NULL
+CREATE TABLE `order_history` (
+  `id` int(11) NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `weight` varchar(100) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `user_order` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `order_history`
+--
+
+INSERT INTO `order_history` (`id`, `type`, `weight`, `user_id`, `user_order`) VALUES
+(1, '2', '5', 1, 0),
+(2, '2', '5', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -321,21 +339,21 @@ CREATE TABLE `user` (
   `user_address` varchar(100) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `user_type` varchar(50) NOT NULL
+  `user_type` varchar(50) NOT NULL,
+  `user_order` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `user_name`, `user_lastname`, `user_phone`, `user_address`, `username`, `password`, `user_type`) VALUES
-(0, 'อาซูรา', 'ดอเลาะ', '0807012878', ' ไม้แก่ง อ.รามัน จ.สุโบทัย', 'admin', '1111', 'admin'),
-(1, 'ฮารมัน', 'นาแว', '0936373661', 'ม.6 ต.อาซ่อง อ.รามัน จ.ยะลา', 'member', '1111', 'member'),
-(2, 'ดุลมานะ', 'หะมะ', '0936373661', '161/5 ม.6  ต.อาซ่อง อ.รามัน จ.ยะลา', 'rider', '1111', 'rider'),
-(3, 'ฟาอิส', 'มะวาสอ', '0936373661', 'สายบุรี', 'fais', '1111', 'member'),
-(4, 'มะลัน', 'แอวัง', '0936373661', 'ยะลา แบตง', '4444', '4444', 'member'),
-(5, 'dsadd', 'sadsd', 'asds', 'adaddsa', 'dsaad', 'a', 'member'),
-(6, 'ยายา', 'นะเดด', '0936373661', 'กทม อ.เมืองยะลา', '6666', '6666', 'member');
+INSERT INTO `user` (`user_id`, `user_name`, `user_lastname`, `user_phone`, `user_address`, `username`, `password`, `user_type`, `user_order`) VALUES
+(0, 'อาซูรา', 'ดอเลาะ', '0807012878', ' ไม้แก่ง อ.รามัน จ.สุโบทัย', 'admin', '1111', 'admin', 0),
+(1, 'ฮารมัน', 'นาแว', '0936373661', 'ม.6 ต.อาซ่อง อ.รามัน จ.ยะลา', 'member', '1111', 'member', 1),
+(2, 'ดุลมานะ', 'หะมะ', '0936373661', '161/5 ม.6  ต.อาซ่อง อ.รามัน จ.ยะลา', 'rider', '1111', 'rider', 2),
+(3, 'ฟาอิส', 'มะวาสอ', '0936373661', 'สายบุรี', 'fais', '1111', 'member', 3),
+(4, 'มะลัน', 'แอวัง', '0936373661', 'ยะลา แบตง', '4444', '4444', 'member', 4),
+(6, 'ยายา', 'นะเดด', '0936373661', 'กทม อ.เมืองยะลา', '6666', '6666', 'member', 5);
 
 --
 -- Indexes for dumped tables
@@ -354,10 +372,10 @@ ALTER TABLE `newspaper`
   ADD PRIMARY KEY (`n_id`);
 
 --
--- Indexes for table `order`
+-- Indexes for table `order_history`
 --
-ALTER TABLE `order`
-  ADD PRIMARY KEY (`d_id`);
+ALTER TABLE `order_history`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `product`
@@ -388,10 +406,10 @@ ALTER TABLE `newspaper`
   MODIFY `n_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `order`
+-- AUTO_INCREMENT for table `order_history`
 --
-ALTER TABLE `order`
-  MODIFY `d_id` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `order_history`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `product`
