@@ -1,7 +1,7 @@
 <?php
     include("config/autoload.php");
 
-    $id = $DATABASE->QueryMaxId("member_sell", "m_id");
+    $id = $DATABASE->QueryMaxId("member_sell", "id");
     $type = $REQUEST->type;
     $weight = $REQUEST->weight;
     $user_id = @$REQUEST->user_id;//เพื่อให้ข้อมูล 2 table เชื่อมโยงกัน
@@ -12,7 +12,7 @@
 
     $sql = "
         INSERT INTO member_sell (
-            m_id, 
+            id, 
             type,
             weight,
             user_id

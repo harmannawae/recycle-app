@@ -2,6 +2,7 @@
     include("config/autoload.php");
 
     $user_id = $DATABASE->QueryMaxId("user", "user_id");
+    $user_order = $DATABASE->QueryMaxId("user", "user_order");
     $user_name = $REQUEST->user_name;
     $user_lastname = $REQUEST->user_lastname;
     $user_phone = $REQUEST->user_phone;
@@ -19,7 +20,8 @@
 
     $sql = "
         INSERT INTO user (
-            user_id, 
+            user_id,
+            user_order,
             user_name,
             user_lastname,
             user_phone,
@@ -29,6 +31,7 @@
             user_type
         ) VALUES (
             '".$user_id."', 
+            '".$user_order."', 
             '".$user_name."',
             '".$user_lastname."',
             '".$user_phone."',

@@ -32,7 +32,8 @@ export class ProductGetPage implements OnInit {
     });
   }
   async del(id) {
-    this.session.showConfirm('คุณแน่ใจต้องการลบข้อมูลนี้ใช่หรือไม่ ?').then(rs => {
+    this.session.showConfirm('คุณแน่ใจต้องการลบข้อมูลนี้ใช่หรือไม่ ?')
+    .then(rs => {
       if (rs) {
         this.session.ajax(this.session.api + "product-del.php", {
           p_id: id

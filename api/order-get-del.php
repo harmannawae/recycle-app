@@ -3,7 +3,7 @@
 
     $id = $REQUEST->id;
     $sql = "
-        DELETE FROM member_sell WHERE m_id='".$id."'
+        DELETE FROM member_sell WHERE id='".$id."'
     ";
     $obj = $DATABASE->Query($sql);
 

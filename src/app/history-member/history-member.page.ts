@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { SessionService } from '../session/session.service';
 
@@ -8,31 +9,27 @@ import { SessionService } from '../session/session.service';
   styleUrls: ['./history-member.page.scss'],
 })
 export class HistoryMemberPage implements OnInit {
-  users = [];
   user_id = "";
+  users = [];
+
   constructor(
+    private router: Router,
     public alertController: AlertController,
     public session: SessionService
+
   ) { }
 
   ngOnInit() {
-    
-    
+
   }
-  //เรียกข้อมูล แสดงคนคนเดี่ยวเท่านั้น
-  async ionViewDidEnter() {
-    this.user_id = await this.session.getStorage("user_id");
+  ionViewDidEnter() {
     this.loadData();
   }
   loadData() {
-    this.session.ajax(this.session.api + "history-member.php", {
-      user_id: this.user_id
-    }, true).then((res: any) => {
+    this.session.ajax(this.session.api + "order-get.php", {}, true).then((res: any) => {
       this.users = res.datas;
     }).catch(err => {
       this.session.showAlert(err);
     });
   }
-  
-  
 }

@@ -26,12 +26,19 @@
                 routerLink="/menu-member-show/{{ user.id }}">
                 รายละเอียด
             </ion-button>
-        <ion-button
+        <ion-button 
                 color="danger"
                 expand="block"
                 size="small"
                 routerLink="/order-confirm/{{ user.id }}">
-                รับออเดอร์
+                ตรวจสอบแก้ไขรายละเอียด
+         </ion-button>
+         <ion-button 
+                color="danger"
+                expand="block"
+                size="small"
+                (click)="del(user.id)">
+                ยืนยันข้อมูล
          </ion-button>
       </ion-card>
     </div>

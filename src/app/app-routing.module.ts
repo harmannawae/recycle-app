@@ -98,7 +98,11 @@ const routes: Routes = [
   {
     path: 'order-history-rider',
     loadChildren: () => import('./order-history-rider/order-history-rider.module').then( m => m.OrderHistoryRiderPageModule)
+  },  {
+    path: 'maptest',
+    loadChildren: () => import('./maptest/maptest.module').then( m => m.MaptestPageModule)
   },
+
 
 
 

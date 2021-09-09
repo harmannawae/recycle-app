@@ -5,7 +5,7 @@
           <ion-back-button></ion-back-button>
       </ion-buttons>
 
-      <ion-title>ประวัติการซื้อขยะที่ผ่านมา</ion-title>
+      <ion-title>ประวัติการขายที่ผ่านมา</ion-title>
       
   </ion-toolbar>
 </ion-header>
@@ -14,10 +14,10 @@
     <div>
       <ion-card *ngFor="let user of users" class="menu-item" >
       <ion-card-content>
-        <h2>ประเภทขยะ: {{ user.p_name }}</h2>
-        <h2>น้ำหนัก: {{ user.weight }} กก.</h2>
-        <h2>ราคาต่อ กก.: {{ user.p_price }} บาท</h2>
-        <h2>ราคารวม: {{ user.total }} บาท</h2>
+        <h2 >ประเภทขยะ: {{ user.p_name }}</h2>
+        <h2 >น้ำหนัก: {{ user.weight }} กก.</h2>
+        <h2 >ราคาต่อ กก.: {{ user.p_price }} บาท</h2>
+        <h2 >ราคารวม: {{ user.total }} บาท</h2>
         </ion-card-content>
       </ion-card>
     </div>

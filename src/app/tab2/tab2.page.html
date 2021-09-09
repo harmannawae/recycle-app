@@ -38,9 +38,15 @@
             <!--สำหรับadmin-->
             <!--แสดงเมนูสำหรับแอดมิน คำสั่ง  *ngIf="user_type=='admin'" -->
             <ion-col class="menu-item" *ngIf="user_type=='admin'">
-                <a routerLink="/menu-table">
+                <a routerLink="/order-get">
                     <img src="assets/icon/search.png">
-                    <div>ผู้ที่ขายแล้ว</div>
+                    <div>รวมยอดการขายที่ผ่านมา</div>
+                </a>
+            </ion-col>
+            <ion-col class="menu-item" *ngIf="user_type=='admin'">
+                <a routerLink="/order-get">
+                    <img src="assets/icon/list.png">
+                    <div>รวมยอดการซื้อที่ผ่านมา</div>
                 </a>
             </ion-col>
 

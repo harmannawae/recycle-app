@@ -50,12 +50,13 @@ export class OrderConfirmPage implements OnInit {
       id: this.id,
       type: this.type,
       weight: this.weight,
-      user_id: this.user_id
+      user_id: this.user_id,
+      user_order: this.user_order
       
     }, true).then((res: any) => {
-      this.session.showAlert(res.msg).then(rs => {
-        //this.router.navigateByUrl('/order-confirm');
-      });
+      {
+        this.router.navigateByUrl('/location');
+      };
     }).catch(err => {
       this.session.showAlert(err);
     });
