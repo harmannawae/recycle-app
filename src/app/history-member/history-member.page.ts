@@ -9,27 +9,30 @@ import { SessionService } from '../session/session.service';
   styleUrls: ['./history-member.page.scss'],
 })
 export class HistoryMemberPage implements OnInit {
-  user_id = "";
   users = [];
-
+  user_id = "";
   constructor(
-    private router: Router,
     public alertController: AlertController,
     public session: SessionService
-
   ) { }
 
   ngOnInit() {
-
+    
+    
   }
-  ionViewDidEnter() {
+  //เรียกข้อมูล แสดงคนคนเดี่ยวเท่านั้น
+  async ionViewDidEnter() {
+    this.user_id = await this.session.getStorage("user_id");
     this.loadData();
   }
   loadData() {
-    this.session.ajax(this.session.api + "order-get.php", {}, true).then((res: any) => {
+    this.session.ajax(this.session.api + "history-member.php", {
+      user_id: this.user_id
+    }, true).then((res: any) => {
       this.users = res.datas;
     }).catch(err => {
       this.session.showAlert(err);
     });
   }
 }
+
