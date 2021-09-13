@@ -35,7 +35,7 @@
             </a>
         </ion-col> 
 
-         <!--สำหรับmember-->
+         <!--สำหรับแอดมิน-->
          <ion-col class="menu-item" *ngIf="user_type=='admin'">
           <a routerLink="/product-get">
               <img src="assets/icon/newspaper.png">
@@ -86,6 +86,13 @@
             <div>จัดการข้อมูลสมาชิก</div>
         </a>
     </ion-col> 
+
+    <ion-col class="menu-item" *ngIf="user_type=='admin'">
+      <a routerLink="/history-all">
+          <img src="assets/icon/history.png">
+          <div>ประวัติการซื้อทั้งหมด</div>
+      </a>
+  </ion-col> 
 
     </ion-row>
   </ion-grid>

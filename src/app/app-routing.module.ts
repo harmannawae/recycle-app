@@ -106,6 +106,10 @@ const routes: Routes = [
     path: 'tab4',
     loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
   },
+  {
+    path: 'history-all',
+    loadChildren: () => import('./history-all/history-all.module').then( m => m.HistoryAllPageModule)
+  },
 
 
 
