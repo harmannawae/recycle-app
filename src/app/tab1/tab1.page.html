@@ -31,9 +31,17 @@
         <ion-col class="menu-item" *ngIf="user_type=='admin'">
             <a routerLink="/product-get">
                 <img src="assets/icon/trash.png">
-                <div>ราคาขยะ</div>
+                <div>จัดการราคาขยะ</div>
             </a>
         </ion-col> 
+
+         <!--สำหรับmember-->
+         <ion-col class="menu-item" *ngIf="user_type=='admin'">
+          <a routerLink="/product-get">
+              <img src="assets/icon/newspaper.png">
+              <div>จัดการข้อมูลข่าวสาร</div>
+          </a>
+      </ion-col> 
 
           <!--สำหรับrider-->
           <ion-col class="menu-item" *ngIf="user_type=='rider'">
@@ -43,6 +51,14 @@
             </a>
         </ion-col> 
 
+         <!--สำหรับrider-->
+         <ion-col class="menu-item" *ngIf="user_type=='rider'">
+          <a routerLink="/product-get">
+              <img src="assets/icon/newspaper.png">
+              <div>ข่าวสาร</div>
+          </a>
+      </ion-col> 
+
         <!--สำหรับmember-->
           <ion-col class="menu-item"  *ngIf="user_type=='member'">
               <a routerLink="/product-get">
@@ -51,15 +67,26 @@
               </a>
           </ion-col>
 
-          <ion-col class="menu-item">
-            <a routerLink="/menu-newspaper">
-                <img src="assets/icon/newspaper.png">
-                <div>ข่าวสาร</div>
-            </a>
-        </ion-col>
+           <!--สำหรับmember-->
+         <ion-col class="menu-item" *ngIf="user_type=='member'">
+          <a routerLink="/product-get">
+              <img src="assets/icon/newspaper.png">
+              <div>ข่าวสาร</div>
+          </a>
+      </ion-col> 
+
       </ion-row>
       <ion-row>
      <!--สำหรับบรรทัดถัดไป-->
+
+      <!--สำหรับmember-->
+      <ion-col class="menu-item" *ngIf="user_type=='admin'">
+        <a routerLink="/manage-member">
+            <img src="assets/icon/members.png">
+            <div>จัดการข้อมูลสมาชิก</div>
+        </a>
+    </ion-col> 
+
     </ion-row>
   </ion-grid>
 </ion-content>

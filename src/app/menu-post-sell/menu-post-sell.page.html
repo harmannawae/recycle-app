@@ -13,7 +13,9 @@
   <ion-item>
     <ion-label>ประเภทขยะ</ion-label>
     <ion-select placeholder="โปรดเลือก" [(ngModel)]="type">
-      <ion-select-option *ngFor="let t of types" value="{{ t.p_id }}">{{ t.p_name }} ราคา {{ t.p_price }} บ./กก.</ion-select-option>
+      <ion-select-option *ngFor="let t of types" value="{{ t.p_id }}">
+          {{ t.p_name }} ราคา {{ t.p_price }} บ./กก.
+      </ion-select-option>
     </ion-select>
 
   </ion-item>

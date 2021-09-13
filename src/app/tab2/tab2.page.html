@@ -25,6 +25,8 @@
 
 <ion-content [fullscreen]="true">
 
+    
+
     <div>
         <div class="title" *ngIf="user_type=='member'">เลือกรายการที่ต้องการ</div>
         <ion-button class="btn-item" color="danger" expand="block" size="large" routerLink="/menu-post-sell" *ngIf="user_type=='member'">
@@ -35,33 +37,18 @@
     <div class="title">รายการ</div>
       <ion-grid>
         <ion-row>
-            <!--สำหรับadmin-->
-            <!--แสดงเมนูสำหรับแอดมิน คำสั่ง  *ngIf="user_type=='admin'" -->
-            <ion-col class="menu-item" *ngIf="user_type=='admin'">
-                <a routerLink="/order-get">
-                    <img src="assets/icon/search.png">
-                    <div>รวมยอดการขายที่ผ่านมา</div>
-                </a>
-            </ion-col>
-            <ion-col class="menu-item" *ngIf="user_type=='admin'">
-                <a routerLink="/order-get">
-                    <img src="assets/icon/list.png">
-                    <div>รวมยอดการซื้อที่ผ่านมา</div>
-                </a>
-            </ion-col>
-
             <!--สำหรับmember-->
             <!--แสดงเมนูสำหรับmember คำสั่ง  *ngIf="user_type=='member'" -->
             <ion-col class="menu-item" *ngIf="user_type=='member'">
                 <a routerLink="/menu-member">
-                    <img src="assets/icon/list.png">
+                    <img src="assets/icon/all.png">
                     <div>รายการของฉัน</div>
                 </a>
             </ion-col>
             <ion-col class="menu-item" *ngIf="user_type=='member'">
                 <a routerLink="/history-member">
                     <img src="assets/icon/checklist.png">
-                    <div>ประวัติการขายขยะที่ผ่านมา</div>
+                    <div>ประวัติการขายขยะของฉันที่ผ่านมา</div>
                 </a>
             </ion-col>
 
@@ -69,14 +56,14 @@
              <!--แสดงเมนูสำหรับrider คำสั่ง  *ngIf="user_type=='rider'" -->
              <ion-col class="menu-item" *ngIf="user_type=='rider'">
                 <a routerLink="/order-get">
-                    <img src="assets/icon/list.png">
+                    <img src="assets/icon/all.png">
                     <div>รายการลงขาย</div>
                 </a>
             </ion-col>
             <ion-col class="menu-item" *ngIf="user_type=='rider'">
                 <a routerLink="/order-history-rider">
                     <img src="assets/icon/checklist.png">
-                    <div>ประวัติการซื้อขยะที่ผ่านมา</div>
+                    <div>ประวัติการซื้อขยะของฉันที่ผ่านมา</div>
                 </a>
             </ion-col>
         </ion-row>
