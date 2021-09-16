@@ -11,6 +11,23 @@
 <!--สิ้นสุด header-->
 
 <ion-content  class="bg">
+
+  <ion-item color="non">
+    <ion-label position="floating">ชื่อ</ion-label>
+    <ion-input [(ngModel)]="user_name"></ion-input>
+  </ion-item>
+  <ion-item color="non">
+    <ion-label position="floating">นามสกุล</ion-label>
+    <ion-input [(ngModel)]="user_lastname"></ion-input>
+  </ion-item>
+  <ion-item color="non">
+    <ion-label position="floating">เบอร์โทร</ion-label>
+    <ion-input [(ngModel)]="user_phone"></ion-input>
+  </ion-item>
+  <ion-item color="non">
+    <ion-label position="floating">ที่อยู้</ion-label>
+    <ion-input type="textarea"[(ngModel)]="user_address"></ion-input>
+  </ion-item>
   <ion-item color="non">
     <ion-label position="floating">ประเภท</ion-label>
     <ion-input [(ngModel)]="p_name"></ion-input>

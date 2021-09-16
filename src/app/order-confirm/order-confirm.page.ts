@@ -15,6 +15,10 @@ export class OrderConfirmPage implements OnInit {
 
   p_name = "";
   p_price = "";
+  user_name = "";
+  user_lastname = "";
+  user_phone = "";
+  user_address = "";
 
   user_id = "";
   user_order = "";
@@ -40,6 +44,10 @@ export class OrderConfirmPage implements OnInit {
       this.p_name = res.data.p_name;
       this.p_price = res.data.p_price;
       this.total= res.data.total;
+      this.user_name= res.data.user_name;
+      this.user_lastname= res.data.user_lastname;
+      this.user_phone= res.data.user_phone;
+      this.user_address= res.data.user_address;
       this.user_id = res.data.user_id;
     }).catch(err => {
       this.session.showAlert(err);
@@ -48,6 +56,7 @@ export class OrderConfirmPage implements OnInit {
   save() {
     this.session.ajax(this.session.api + "order-confirm-save.php", {
       id: this.id,
+      user_name: this.user_name,
       type: this.type,
       weight: this.weight,
       user_id: this.user_id,
