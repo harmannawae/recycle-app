@@ -6,10 +6,13 @@
     $sql = "SELECT 
     member_sell.*,
     product.*,
+    user.*,
     member_sell.weight*product.p_price AS total
      FROM member_sell
-     INNER JOIN product
-     ON member_sell.type = product.p_id WHERE id='".$id."' ";
+     INNER JOIN product ON member_sell.type = product.p_id 
+     INNER JOIN user ON member_sell.user_id = user.user_id
+     WHERE id='".$id."' ";
+
 
     $obj = $DATABASE->QueryObj($sql);
 
@@ -17,3 +20,5 @@
         "status"=>true,
         "data"=>$obj[0]
     ));
+
+    

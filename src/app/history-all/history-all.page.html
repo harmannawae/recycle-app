@@ -14,11 +14,19 @@
     <div>
       <ion-card *ngFor="let user of users" class="menu-item" >
       <ion-card-content>
+        <h2 >ผู้ซื้อ: {{ user.user_name }} {{ user.user_lastname }}</h2>
         <h2 >ประเภทขยะ: {{ user.p_name }}</h2>
         <h2 >น้ำหนัก: {{ user.weight }} กก.</h2>
         <h2 >ราคาต่อ กก.: {{ user.p_price }} บาท</h2>
         <h2 >ราคารวม: {{ user.total }} บาท</h2>
         </ion-card-content>
+        <ion-button
+                color="danger"
+                expand="block"
+                size="small"
+                routerLink="/menu-member-show/{{ user.id }}">
+                รายละเอียดผู้ขาย
+            </ion-button>
       </ion-card>
     </div>
 </ion-content>

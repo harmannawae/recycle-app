@@ -6,9 +6,11 @@
         SELECT 
             order_history.*,
             product.*,
+            user.*,
             order_history.weight*product.p_price AS total 
         FROM order_history 
             INNER JOIN product ON product.p_id=order_history.type
+            INNER JOIN user ON user.user_order=order_history.user_order
     ";
     $obj = $DATABASE->QueryObj($sql);
 

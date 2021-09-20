@@ -98,7 +98,8 @@ const routes: Routes = [
   {
     path: 'order-history-rider',
     loadChildren: () => import('./order-history-rider/order-history-rider.module').then( m => m.OrderHistoryRiderPageModule)
-  },  {
+  },
+  {
     path: 'maptest',
     loadChildren: () => import('./maptest/maptest.module').then( m => m.MaptestPageModule)
   },
@@ -110,7 +111,7 @@ const routes: Routes = [
     path: 'history-all',
     loadChildren: () => import('./history-all/history-all.module').then( m => m.HistoryAllPageModule)
   },
-
+  
 
 
 

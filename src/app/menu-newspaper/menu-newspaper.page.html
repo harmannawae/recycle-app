@@ -40,6 +40,7 @@
 <ion-content>
 
   <ion-card *ngFor="let n of newspapers">
+    <img src="{{ n.image }}">
     <ion-card-header>
       <ion-card-subtitle>{{ n.n_title }}</ion-card-subtitle>
       <ion-card-title>{{ n.n_name }}</ion-card-title>

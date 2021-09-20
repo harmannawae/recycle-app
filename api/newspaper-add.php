@@ -14,12 +14,14 @@
             n_id,
             n_title,
             n_name,
-            n_content
+            n_content,
+            image
         ) VALUES (
             '".$n_id."', 
             '".$n_title."',
             '".$n_name."',
-            '".$n_content."'
+            '".$n_content."',
+            'assets/img/map.png'
         )
     ";
     $obj = $DATABASE->Query($sql);

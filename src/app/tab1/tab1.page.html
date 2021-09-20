@@ -42,23 +42,6 @@
               <div>จัดการข้อมูลข่าวสาร</div>
           </a>
       </ion-col> 
-
-          <!--สำหรับrider-->
-          <ion-col class="menu-item" *ngIf="user_type=='rider'">
-            <a routerLink="/product-get">
-                <img src="assets/icon/trash.png">
-                <div>ราคาขยะ</div>
-            </a>
-        </ion-col> 
-
-         <!--สำหรับrider-->
-         <ion-col class="menu-item" *ngIf="user_type=='rider'">
-          <a routerLink="/menu-newspaper">
-              <img src="assets/icon/newspaper.png">
-              <div>ข่าวสาร</div>
-          </a>
-      </ion-col> 
-
         <!--สำหรับmember-->
           <ion-col class="menu-item"  *ngIf="user_type=='member'">
               <a routerLink="/product-get">
@@ -96,4 +79,54 @@
 
     </ion-row>
   </ion-grid>
+
+  <div  *ngIf="user_type=='member'">
+    <div *ngFor="let product of products" >
+        <div>
+          {{ product.p_name }}
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div *ngIf="user_type=='rider'">
+    <div>
+        <div>
+            <div>
+                <div>
+                    <div class="title">ข่าวสารน่ารู้</div>
+                </div>
+                <ion-slides spaceBetween="-40">
+                    <ion-slide *ngFor="let n of newspapers">
+                            <ion-card>
+                                <img src="{{ n.image }}">
+                                <ion-card-header>
+                                  <ion-card-subtitle>{{ n.n_title }}</ion-card-subtitle>
+                                  <ion-card-title>{{ n.n_name }}</ion-card-title>
+                                </ion-card-header>
+                                <ion-card-content> 
+                                    {{ n.n_content }} 
+                                </ion-card-content>
+                              </ion-card>
+                    </ion-slide>
+                  </ion-slides>
+            </div>
+        </div>
+        <div>
+            
+            <ion-card *ngFor="let order of orders" class="menu-item" >
+                <ion-card-content> 
+                      <div>
+                        <h2>
+                            ขยะที่ต้องการขายตอนนี้ {{ order.report_count }}
+                        </h2>
+                      </div>
+                  </ion-card-content>
+                </ion-card>
+        </div>
+    </div>
+  </div>
 </ion-content>

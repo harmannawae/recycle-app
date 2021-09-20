@@ -12,6 +12,7 @@ export class NewspaperEditPage implements OnInit {
   n_title = "";
   n_name = "";
   n_content = "";
+  image = "";
   constructor(
     private route: ActivatedRoute,
     public session: SessionService,
@@ -30,7 +31,8 @@ export class NewspaperEditPage implements OnInit {
       this.n_id = res.data.n_id;
       this.n_title = res.data.n_title;
       this.n_name = res.data.n_name;
-      this.n_content = res.data.pn_content;
+      this.n_content = res.data.n_content;
+      this.image = res.data.image;
     }).catch(err => {
       this.session.showAlert(err);
     });
@@ -40,7 +42,8 @@ export class NewspaperEditPage implements OnInit {
       n_id: this.n_id,
       n_title: this.n_title,
       n_name: this.n_name,
-      n_content: this.n_content
+      n_content: this.n_content,
+      image: this.image
       
     }, true).then((res: any) => {
       this.session.showAlert(res.msg).then(rs => {
