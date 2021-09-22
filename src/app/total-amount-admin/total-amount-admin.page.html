@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar color="warning">
+
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+      </ion-buttons>
+
+      <ion-title>ประวัติการซื้อทั้งหมด</ion-title>
+      
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div>
+      <ion-card *ngFor="let p of sum_totals" class="menu-item" >
+      <ion-card-content>
+        <h2 >ผู้ซื้อ: {{ p.sum_total }}</h2>
+        </ion-card-content>
+      </ion-card>
+    </div>
+</ion-content>

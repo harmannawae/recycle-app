@@ -6,10 +6,14 @@
         SELECT 
             order_history.*,
             product.*,
-            user.* 
+            user.*,
+            SUM(total) AS sum_total,
+            SUM(weight) AS sum_weight,
+            order_history.weight*product.p_price AS total 
         FROM order_history 
             INNER JOIN product ON product.p_id=order_history.type
-            INNER JOIN user ON user.user_order=order_history.user_order
+            INNER JOIN user ON user.user_id=order_history.user_id
+        WHERE order_history.user_id='".$user_id."'
     ";
     $obj = $DATABASE->QueryObj($sql);
 

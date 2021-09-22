@@ -59,6 +59,7 @@ export class OrderConfirmPage implements OnInit {
       user_name: this.user_name,
       type: this.type,
       weight: this.weight,
+      total: this.total,
       user_id: this.user_id,
       user_order: this.user_order
       

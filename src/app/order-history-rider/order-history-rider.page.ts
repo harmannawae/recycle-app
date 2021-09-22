@@ -10,6 +10,7 @@ import { SessionService } from '../session/session.service';
 })
 export class OrderHistoryRiderPage implements OnInit  {
   users = [];
+  sum_totals = [];
   user_order = "";
   constructor(
     public alertController: AlertController,
@@ -33,7 +34,13 @@ export class OrderHistoryRiderPage implements OnInit  {
     }).catch(err => {
       this.session.showAlert(err);
     });
+
+    this.session.ajax(this.session.api + "total-amount-rider.php", {
+      user_order: this.user_order
+    }, true).then((res: any) => {
+      this.sum_totals = res.datas;
+        }).catch(err => {
+          this.session.showAlert(err);
+    });
   }
-  
-  
 }

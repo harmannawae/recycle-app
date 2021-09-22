@@ -1,32 +1,37 @@
 <ion-header>
-  <ion-toolbar color="warning">
+    <ion-toolbar color="warning">
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
 
-      <ion-buttons slot="start">
-          <ion-back-button></ion-back-button>
-      </ion-buttons>
-
-      <ion-title>ประวัติการซื้อทั้งหมด</ion-title>
-      
-  </ion-toolbar>
+        <ion-title>ประวัติการซื้อทั้งหมด</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
     <div>
-      <ion-card *ngFor="let user of users" class="menu-item" >
-      <ion-card-content>
-        <h2 >ผู้ซื้อ: {{ user.user_name }} {{ user.user_lastname }}</h2>
-        <h2 >ประเภทขยะ: {{ user.p_name }}</h2>
-        <h2 >น้ำหนัก: {{ user.weight }} กก.</h2>
-        <h2 >ราคาต่อ กก.: {{ user.p_price }} บาท</h2>
-        <h2 >ราคารวม: {{ user.total }} บาท</h2>
-        </ion-card-content>
-        <ion-button
+        <ion-card *ngFor="let user of users" class="menu-item">
+            <ion-card-content>
+                <h2>ผู้ซื้อ: {{ user.user_name }} {{ user.user_lastname }}</h2>
+                <h2>ประเภทขยะ: {{ user.p_name }}</h2>
+                <h2>น้ำหนัก: {{ user.weight }} กก.</h2>
+                <h2>ราคาต่อ กก.: {{ user.p_price }} บาท</h2>
+                <h2>ราคารวม: {{ user.total }} บาท</h2>
+            </ion-card-content>
+            <ion-button
                 color="danger"
                 expand="block"
                 size="small"
                 routerLink="/menu-member-show/{{ user.id }}">
                 รายละเอียดผู้ขาย
             </ion-button>
-      </ion-card>
+        </ion-card>
     </div>
 </ion-content>
+<ion-button
+  color="danger"
+  expand="block"
+  size="large"
+  *ngFor="let p of sum_totals">
+    <h3>ยอดรวม น้ำหนัก: {{ p.sum_weight }} ราคา: {{ p.sum_total }}.บาท</h3>
+</ion-button>

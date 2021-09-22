@@ -11,6 +11,7 @@ import { SessionService } from '../session/session.service';
 export class HistoryMemberPage implements OnInit {
   users = [];
   user_id = "";
+  sum_totals = [];
   constructor(
     public alertController: AlertController,
     public session: SessionService
@@ -32,6 +33,15 @@ export class HistoryMemberPage implements OnInit {
       this.users = res.datas;
     }).catch(err => {
       this.session.showAlert(err);
+    });
+
+    
+    this.session.ajax(this.session.api + "total-amount-member.php", {
+      user_id: this.user_id
+    }, true).then((res: any) => {
+      this.sum_totals = res.datas;
+        }).catch(err => {
+          this.session.showAlert(err);
     });
   }
 }

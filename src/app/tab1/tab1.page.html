@@ -42,58 +42,61 @@
               <div>จัดการข้อมูลข่าวสาร</div>
           </a>
       </ion-col> 
-        <!--สำหรับmember-->
-          <ion-col class="menu-item"  *ngIf="user_type=='member'">
-              <a routerLink="/product-get">
-                  <img src="assets/icon/trash.png">
-                  <div>ราคาขยะ</div>
-              </a>
-          </ion-col>
-
-           <!--สำหรับmember-->
-         <ion-col class="menu-item" *ngIf="user_type=='member'">
-          <a routerLink="/menu-newspaper">
-              <img src="assets/icon/newspaper.png">
-              <div>ข่าวสาร</div>
-          </a>
-      </ion-col> 
-
+        
       </ion-row>
       <ion-row>
      <!--สำหรับบรรทัดถัดไป-->
-
-      <!--สำหรับmember-->
+      <!--สำหรับadminr-->
       <ion-col class="menu-item" *ngIf="user_type=='admin'">
         <a routerLink="/manage-member">
             <img src="assets/icon/members.png">
             <div>จัดการข้อมูลสมาชิก</div>
         </a>
     </ion-col> 
-
     <ion-col class="menu-item" *ngIf="user_type=='admin'">
       <a routerLink="/history-all">
           <img src="assets/icon/history.png">
           <div>ประวัติการซื้อทั้งหมด</div>
       </a>
   </ion-col> 
-
     </ion-row>
+    <ion-row>
+      <!--สำหรับบรรทัดถัดไป-->
+       <!--สำหรับadminr-->
+       <ion-col class="menu-item" *ngIf="user_type=='admin'">
+         <a routerLink="/total-amount-admin">
+             <img src="assets/icon/total.png">
+             <div>รวมยอดทั้งหมด</div>
+         </a>
+     </ion-col> 
+     </ion-row>
   </ion-grid>
 
-  <div  *ngIf="user_type=='member'">
-    <div *ngFor="let product of products" >
-        <div>
-          {{ product.p_name }}
-        </div>
-    </div>
-</div>
 
 
 
 
-
-<div *ngIf="user_type=='rider'">
+<div *ngIf="user_type=='rider'"> <!--สำหรับrider-->
     <div>
+      <div>
+            
+        <ion-card *ngFor="let order of orders" class="menu-item" >
+            <ion-card-content> 
+                  <div>
+                    <h2>
+                      <div>
+                        <img src="assets/icon/all.png">
+                        <ion-button color="danger">
+                          <ion-text>
+                            <h1>ขยะที่ต้องการขายตอนนี้ {{ order.report_count }}</h1>
+                          </ion-text>
+                        </ion-button>  
+                      </div>
+                    </h2>
+                  </div>
+              </ion-card-content>
+            </ion-card>
+    </div>
         <div>
             <div>
                 <div>
@@ -115,18 +118,64 @@
                   </ion-slides>
             </div>
         </div>
-        <div>
-            
-            <ion-card *ngFor="let order of orders" class="menu-item" >
-                <ion-card-content> 
-                      <div>
-                        <h2>
-                            ขยะที่ต้องการขายตอนนี้ {{ order.report_count }}
-                        </h2>
-                      </div>
-                  </ion-card-content>
-                </ion-card>
+    </div>
+  </div>
+
+  <div *ngIf="user_type=='member'"> <!--สำหรับmember-->
+    <div>
+        <div><!-- ราคาขยะ แบบ7รายการ-->
+          <div>
+            <div class="title">ราคาขยะวันนี้</div>
         </div>
+          <ion-item *ngFor="let product of products">
+            <ion-grid>
+                <ion-row >
+                  <ion-col>
+                    <div>
+                        <h6>
+                          {{ product.p_name }}
+                        </h6>
+                    </div>
+                  </ion-col>
+                  <ion-col>
+                    <div>
+                        <h6>
+                            {{ product.p_price }} กก. บาท
+                        </h6>
+                    </div>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+        </ion-item>
+        <ion-button 
+                            color="danger"
+                            expand="block"
+                            size="small"
+                            routerLink="/product-get">
+                            เพิ่มเติม
+         </ion-button>
+        </div>
+        <div>
+          <div>
+              <div>
+                  <div class="title">ข่าวสารน่ารู้</div>
+              </div>
+              <ion-slides spaceBetween="-40">
+                  <ion-slide *ngFor="let n of newspapers">
+                          <ion-card>
+                              <img src="{{ n.image }}">
+                              <ion-card-header>
+                                <ion-card-subtitle>{{ n.n_title }}</ion-card-subtitle>
+                                <ion-card-title>{{ n.n_name }}</ion-card-title>
+                              </ion-card-header>
+                              <ion-card-content> 
+                                  {{ n.n_content }} 
+                              </ion-card-content>
+                            </ion-card>
+                  </ion-slide>
+                </ion-slides>
+          </div>
+      </div>
     </div>
   </div>
 </ion-content>

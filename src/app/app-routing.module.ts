@@ -110,7 +110,11 @@ const routes: Routes = [
   {
     path: 'history-all',
     loadChildren: () => import('./history-all/history-all.module').then( m => m.HistoryAllPageModule)
+  },  {
+    path: 'total-amount-admin',
+    loadChildren: () => import('./total-amount-admin/total-amount-admin.module').then( m => m.TotalAmountAdminPageModule)
   },
+
   
 
 
