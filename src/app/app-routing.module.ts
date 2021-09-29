@@ -114,6 +114,10 @@ const routes: Routes = [
     path: 'total-amount-admin',
     loadChildren: () => import('./total-amount-admin/total-amount-admin.module').then( m => m.TotalAmountAdminPageModule)
   },
+  {
+    path: 'location-get',
+    loadChildren: () => import('./location-get/location-get.module').then( m => m.LocationGetPageModule)
+  },
 
   
 
