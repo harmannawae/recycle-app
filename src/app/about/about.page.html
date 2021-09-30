@@ -1,0 +1,75 @@
+<ion-header [translucent]="true" *ngIf="user_type=='admin'">
+  <ion-toolbar color="warning" >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+ </ion-buttons>
+      <ion-title>
+        ทีมผู้พัฒนา
+      </ion-title>
+      <ion-buttons slot="primary">
+      </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header [translucent]="true" *ngIf="user_type=='member'">
+  <ion-toolbar color="tertiary" >
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+ </ion-buttons>
+      <ion-title>
+      ทีมผู้พัฒนา
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header [translucent]="true"  *ngIf="user_type=='rider'">
+    <ion-toolbar color="success" >
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+   </ion-buttons>
+        <ion-title>
+         ทีมผู้พัฒนา
+        </ion-title> 
+    </ion-toolbar>
+  </ion-header>
+<!--สิ้นสุด header-->
+
+<ion-content>
+  <div class="title">ทีมผู้พัฒนา</div>
+  <ion-slides spaceBetween="-40">
+
+    <ion-slide>
+      <ion-card>
+        <img src="assets/img/profile/profile01.jpg">
+        <ion-card-header>
+          <ion-card-subtitle>ทีมผู้พัฒนา</ion-card-subtitle>
+          <ion-card-title>นาย ฮารมัน นาแว</ion-card-title>
+        </ion-card-header>
+        <ion-card-content> รายละเอียด </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card>
+        <img src="assets/img/profile/profile02.jpg">
+        <ion-card-header>
+          <ion-card-subtitle>ทีมผู้พัฒนา</ion-card-subtitle>
+          <ion-card-title>นางสาว อาซูรา ดอเลาะ</ion-card-title>
+        </ion-card-header>
+        <ion-card-content> รายละเอียด </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+    <ion-slide>
+      <ion-card>
+        <img src="assets/img/profile/profile03.jpg">
+        <ion-card-header>
+          <ion-card-subtitle>ทีมผู้พัฒนา</ion-card-subtitle>
+          <ion-card-title>นางสาว ซาสซูวานี กานา</ion-card-title>
+        </ion-card-header>
+        <ion-card-content> รายละเอียด </ion-card-content>
+      </ion-card>
+    </ion-slide>
+
+</ion-slides>
+</ion-content>

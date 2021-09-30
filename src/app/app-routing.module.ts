@@ -104,13 +104,10 @@ const routes: Routes = [
     loadChildren: () => import('./maptest/maptest.module').then( m => m.MaptestPageModule)
   },
   {
-    path: 'tab4',
-    loadChildren: () => import('./tab4/tab4.module').then( m => m.Tab4PageModule)
-  },
-  {
     path: 'history-all',
     loadChildren: () => import('./history-all/history-all.module').then( m => m.HistoryAllPageModule)
-  },  {
+  },
+  {
     path: 'total-amount-admin',
     loadChildren: () => import('./total-amount-admin/total-amount-admin.module').then( m => m.TotalAmountAdminPageModule)
   },
@@ -118,6 +115,11 @@ const routes: Routes = [
     path: 'location-get',
     loadChildren: () => import('./location-get/location-get.module').then( m => m.LocationGetPageModule)
   },
+  {
+    path: 'about',
+    loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
+  },
+
 
   
 

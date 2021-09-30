@@ -23,8 +23,7 @@
 </ion-header>
 <!--สิ้นสุด header-->
 <ion-content [fullscreen]="true">
-   <ion-button 
-        id="btn-save" 
+   <ion-button  
         class="btn-logout"
         color="non" 
         expand="block" 
@@ -34,5 +33,7 @@
               โปรไฟล์
             </div>
     </ion-button>
+    <ion-button  class="btn-logout" color="non" expand="block" size="small" routerLink="/about">เกี่ยวกับ</ion-button>
+
   <ion-button  class="btn-logout" color="non" expand="block" size="small" (click)="logout()">ออกจากระบบ</ion-button>
 </ion-content>
