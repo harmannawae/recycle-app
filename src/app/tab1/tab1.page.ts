@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/quotes */
 import { Component } from '@angular/core';
 import { SessionService } from '../session/session.service';
 
@@ -7,6 +8,7 @@ import { SessionService } from '../session/session.service';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
+  // eslint-disable-next-line @typescript-eslint/naming-convention
   user_type;
   orders = [];
   products = [];

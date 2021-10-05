@@ -1,3 +1,6 @@
+/* eslint-disable eol-last */
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/quotes */
 import { Component } from '@angular/core';
 import { SessionService } from '../session/session.service';
 
@@ -15,6 +18,3 @@ export class Tab2Page {
       this.user_type = await this.session.getStorage("user_type");
     }
   }
-  
-
-  
