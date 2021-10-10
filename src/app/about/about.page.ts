@@ -1,3 +1,6 @@
+/* eslint-disable eol-last */
+/* eslint-disable @typescript-eslint/quotes */
+/* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
@@ -22,6 +25,5 @@ export class AboutPage implements OnInit {
   }
   async ionViewDidEnter() {
     this.user_type = await this.session.getStorage("user_type");
-   
   }
 }

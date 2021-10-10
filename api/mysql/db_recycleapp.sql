@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 08, 2021 at 10:59 PM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 7.3.25
+-- Generation Time: Oct 10, 2021 at 02:37 PM
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 7.4.24
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -227,7 +227,15 @@ INSERT INTO `location` (`lat`, `lng`) VALUES
 ('6.4028', '101.7065'),
 ('6.4028', '101.7065'),
 ('6.4028', '101.7065'),
-('6.5320882454383', '101.28550601139');
+('6.5320882454383', '101.28550601139'),
+('6.532038', '101.2855565'),
+('6.532038', '101.2855565'),
+('6.532038', '101.2855565'),
+('6.5320134712853', '101.28543736053'),
+('6.5320134712853', '101.28543736053'),
+('6.5320487236052', '101.28548741524'),
+('6.5319926309013', '101.28545730665'),
+('6.5319926309013', '101.28545730665');
 
 -- --------------------------------------------------------
 
@@ -247,10 +255,8 @@ CREATE TABLE `member_sell` (
 --
 
 INSERT INTO `member_sell` (`id`, `type`, `weight`, `user_id`) VALUES
-(12, '2', '5', 1),
-(13, '5', '42', 4),
-(14, '5', '4', 4),
-(15, '1', '10', 4);
+(15, '1', '10', 4),
+(16, '3', '', 1);
 
 -- --------------------------------------------------------
 
@@ -262,15 +268,18 @@ CREATE TABLE `newspaper` (
   `n_id` int(11) NOT NULL,
   `n_title` varchar(255) NOT NULL,
   `n_name` varchar(255) NOT NULL,
-  `n_content` varchar(255) NOT NULL
+  `n_content` varchar(255) NOT NULL,
+  `image` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Dumping data for table `newspaper`
 --
 
-INSERT INTO `newspaper` (`n_id`, `n_title`, `n_name`, `n_content`) VALUES
-(1, 'คู่มือ', 'การแยกขยะ', '1.ถังขยะสำหรับขยะอินทรีย์ ขยะเปียก (สีเขียว) ขยะอินทรีย์ คือ ขยะที่เน่าเสียและย่อยสลายได้เร็ว เช่น เศษอาหาร เปลือกผลไม้ เศษผัก เนื้อสัตว์ เศษใบไม้แห้ง ...\n2.ถังขยะสำหรับขยะทั่วไป (สีน้ำเงิน) ...\n3.ถังขยะสำหรับขยะรีไซเคิล (สีเหลือง) ...\n4.ถังขยะสำหรับขยะอั');
+INSERT INTO `newspaper` (`n_id`, `n_title`, `n_name`, `n_content`, `image`) VALUES
+(1, 'คู่มือ', 'การแยกขยะ', '1.ถังขยะสำหรับขยะอินทรีย์ ขยะเปียก (สีเขียว) ขยะอินทรีย์ คือ ขยะที่เน่าเสียและย่อยสลายได้เร็ว เช่น เศษอาหาร เปลือกผลไม้ เศษผัก เนื้อสัตว์ เศษใบไม้แห้ง ...\n2.ถังขยะสำหรับขยะทั่วไป (สีน้ำเงิน) ...\n3.ถังขยะสำหรับขยะรีไซเคิล (สีเหลือง) ...\n4.ถังขยะสำหรับขยะอั', 'assets/img/002.png'),
+(2, 'ความรู้', 'ขยะตัวการโลกร้อน', 'Carbon Footprint คืออะไร\nหลายคนคงเคยได้ยินคำนี้กัันมาบ้าง แต่น้อยคนที่จะเข้าใจจริงๆ ว่ามันคืออะไรกันแน่ แล้วมีความเกี่ยวข้องอย่างไรกับขยะอาหาร คำว่า “Carbon Footprint” มีทั้งในชีวิตประจำวันของคน และของผลิตภัณฑ์ หมายถึง ปริมาณก๊าซเรือนกระจกที่ถูกปล่อยออกมา', 'assets/img/001.jpg'),
+(3, 'คู่มือ', 'มาแยกขยะกันเถอะ', 'สีน้ำเงิน ขยะรีไซเคิล\nสีเขียว ขยะเปียก\nสีเหลือง ขยะทั่วไป\nสีแดง ขยะอันตราย', 'assets/img/003.jpg');
 
 -- --------------------------------------------------------
 
@@ -282,6 +291,7 @@ CREATE TABLE `order_history` (
   `id` int(11) NOT NULL,
   `type` varchar(100) NOT NULL,
   `weight` varchar(100) NOT NULL,
+  `total` varchar(255) NOT NULL,
   `user_id` int(11) NOT NULL,
   `user_order` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -290,9 +300,12 @@ CREATE TABLE `order_history` (
 -- Dumping data for table `order_history`
 --
 
-INSERT INTO `order_history` (`id`, `type`, `weight`, `user_id`, `user_order`) VALUES
-(1, '2', '5', 1, 0),
-(2, '2', '5', 1, 0);
+INSERT INTO `order_history` (`id`, `type`, `weight`, `total`, `user_id`, `user_order`) VALUES
+(3, '5', '42', '42', 4, 2),
+(4, '2', '22', '17.6', 1, 2),
+(5, '2', '90', '72', 1, 5),
+(6, '5', '4', '4', 4, 5),
+(7, '1', '10', '30', 4, 5);
 
 -- --------------------------------------------------------
 
@@ -353,7 +366,7 @@ INSERT INTO `user` (`user_id`, `user_name`, `user_lastname`, `user_phone`, `user
 (2, 'ดุลมานะ', 'หะมะ', '0936373661', '161/5 ม.6  ต.อาซ่อง อ.รามัน จ.ยะลา', 'rider', '1111', 'rider', 2),
 (3, 'ฟาอิส', 'มะวาสอ', '0936373661', 'สายบุรี', 'fais', '1111', 'member', 3),
 (4, 'มะลัน', 'แอวัง', '0936373661', 'ยะลา แบตง', '4444', '4444', 'member', 4),
-(6, 'ยายา', 'นะเดด', '0936373661', 'กทม อ.เมืองยะลา', '6666', '6666', 'member', 5);
+(6, 'ยายา', 'นะเดด', '0936373661', 'กทม อ.เมืองยะลา', '6666', '6666', 'rider', 5);
 
 --
 -- Indexes for dumped tables
@@ -403,7 +416,7 @@ ALTER TABLE `member_sell`
 -- AUTO_INCREMENT for table `newspaper`
 --
 ALTER TABLE `newspaper`
-  MODIFY `n_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `n_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `order_history`

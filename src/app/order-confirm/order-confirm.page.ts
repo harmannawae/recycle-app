@@ -1,3 +1,6 @@
+/* eslint-disable object-shorthand */
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/quotes */
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SessionService } from '../session/session.service';
@@ -12,14 +15,12 @@ export class OrderConfirmPage implements OnInit {
   type = "";
   weight = "";
   total ="";
-
   p_name = "";
   p_price = "";
   user_name = "";
   user_lastname = "";
   user_phone = "";
   user_address = "";
-
   user_id = "";
   user_order = "";
   constructor(
@@ -62,7 +63,6 @@ export class OrderConfirmPage implements OnInit {
       total: this.total,
       user_id: this.user_id,
       user_order: this.user_order
-      
     }, true).then((res: any) => {
       {
         this.router.navigateByUrl('/location');

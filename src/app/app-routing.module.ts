@@ -6,7 +6,6 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
   },
-  
   {
     path: 'login',
     loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
@@ -23,7 +22,6 @@ const routes: Routes = [
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   },
-  
   {
     path: 'menu-mysell',
     loadChildren: () => import('./menu-mysell/menu-mysell.module').then( m => m.MenuMysellPageModule)
@@ -40,7 +38,6 @@ const routes: Routes = [
     path: 'menu-post-sell',
     loadChildren: () => import('./menu-post-sell/menu-post-sell.module').then( m => m.MenuPostSellPageModule)
   },
-  
   {
     path: 'menu-member',
     loadChildren: () => import('./menu-member/menu-member.module').then( m => m.MenuMemberPageModule)
@@ -49,7 +46,6 @@ const routes: Routes = [
     path: 'menu-member-show/:id',
     loadChildren: () => import('./menu-member-show/menu-member-show.module').then( m => m.MenuMemberShowPageModule)
   },
-  
   {
     path: 'product-get',
     loadChildren: () => import('./product-get/product-get.module').then( m => m.ProductGetPageModule)
@@ -74,7 +70,6 @@ const routes: Routes = [
     path: 'register-admin',
     loadChildren: () => import('./register-admin/register-admin.module').then( m => m.RegisterAdminPageModule)
   },
- 
   {
     path: 'history-member',
     loadChildren: () => import('./history-member/history-member.module').then( m => m.HistoryMemberPageModule)
@@ -100,10 +95,6 @@ const routes: Routes = [
     loadChildren: () => import('./order-history-rider/order-history-rider.module').then( m => m.OrderHistoryRiderPageModule)
   },
   {
-    path: 'maptest',
-    loadChildren: () => import('./maptest/maptest.module').then( m => m.MaptestPageModule)
-  },
-  {
     path: 'history-all',
     loadChildren: () => import('./history-all/history-all.module').then( m => m.HistoryAllPageModule)
   },
@@ -120,14 +111,6 @@ const routes: Routes = [
     loadChildren: () => import('./about/about.module').then( m => m.AboutPageModule)
   },
 
-
-  
-
-
-
-
-
-  
 ];
 @NgModule({
   imports: [

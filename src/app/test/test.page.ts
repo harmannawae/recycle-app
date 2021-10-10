@@ -1,3 +1,9 @@
+/* eslint-disable object-shorthand */
+/* eslint-disable prefer-const */
+/* eslint-disable eqeqeq */
+/* eslint-disable @typescript-eslint/semi */
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/quotes */
 import { Component, OnInit } from '@angular/core';
 import { ActionSheetController } from '@ionic/angular';
 import { SessionService } from '../session/session.service';
@@ -17,7 +23,6 @@ export class TestPage implements OnInit {
   ) { }
 
   ngOnInit() {}
-  
   async OpenCamera() {
       const actionSheet = await this.actionSheetController.create({
           header: 'Albums',
@@ -45,7 +50,7 @@ export class TestPage implements OnInit {
           encodingType: this.camera.EncodingType.JPEG,
           mediaType: this.camera.MediaType.PICTURE
       }
-      if (type == 1) { // Camera 
+      if (type == 1) { // Camera
           options.sourceType = this.camera.PictureSourceType.CAMERA;
       } else {        //  Album
           options.sourceType = this.camera.PictureSourceType.PHOTOLIBRARY;
@@ -71,5 +76,4 @@ export class TestPage implements OnInit {
   OpenLocation() {
     this.session.LinkTo("location");
 }
- 
 }

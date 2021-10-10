@@ -1,5 +1,7 @@
+/* eslint-disable eol-last */
+/* eslint-disable @typescript-eslint/quotes */
+/* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { SessionService } from '../session/session.service';
 
@@ -18,8 +20,6 @@ export class OrderHistoryRiderPage implements OnInit  {
   ) { }
 
   ngOnInit() {
-    
-    
   }
   //เรียกข้อมูล แสดงคนคนเดี่ยวเท่านั้น
   async ionViewDidEnter() {
@@ -34,7 +34,6 @@ export class OrderHistoryRiderPage implements OnInit  {
     }).catch(err => {
       this.session.showAlert(err);
     });
-
     this.session.ajax(this.session.api + "total-amount-rider.php", {
       user_order: this.user_order
     }, true).then((res: any) => {

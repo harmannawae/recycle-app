@@ -1,3 +1,6 @@
+/* eslint-disable eol-last */
+/* eslint-disable @typescript-eslint/quotes */
+/* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SessionService } from '../session/session.service';
@@ -10,7 +13,6 @@ import { SessionService } from '../session/session.service';
 export class ProductAddPage implements OnInit {
   p_name = "";
   p_price = "";
- 
   constructor(
     private router: Router,
     public session: SessionService

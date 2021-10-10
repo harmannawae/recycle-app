@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/quotes */
+/* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { SessionService } from '../session/session.service';
@@ -15,15 +17,12 @@ export class MenuMemberShowPage implements OnInit {
   user_lastname = "";
   user_phone = "";
   user_address = "";
- 
   constructor(
     private route: ActivatedRoute,
     public session: SessionService
-   
   ) {
     this.id = this.route.snapshot.paramMap.get("id");
   }
-
   ngOnInit() {
     this.loadData();
   }

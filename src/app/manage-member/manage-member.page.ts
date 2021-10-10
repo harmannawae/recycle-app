@@ -1,3 +1,6 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable eol-last */
+/* eslint-disable @typescript-eslint/quotes */
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { SessionService } from '../session/session.service';
@@ -17,7 +20,6 @@ export class ManageMemberPage implements OnInit {
   ) { }
 
   ngOnInit() {
-
   }
   ionViewDidEnter() {
     this.loadData();
@@ -43,4 +45,3 @@ export class ManageMemberPage implements OnInit {
     });
   }
 }
-  

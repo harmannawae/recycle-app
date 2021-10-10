@@ -1,3 +1,7 @@
+/* eslint-disable eol-last */
+/* eslint-disable object-shorthand */
+/* eslint-disable @typescript-eslint/quotes */
+/* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';

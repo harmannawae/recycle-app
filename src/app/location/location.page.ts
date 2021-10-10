@@ -1,3 +1,8 @@
+/* eslint-disable object-shorthand */
+/* eslint-disable @typescript-eslint/naming-convention */
+/* eslint-disable @typescript-eslint/quotes */
+/* eslint-disable @typescript-eslint/member-ordering */
+/* eslint-disable no-var */
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { SessionService } from '../session/session.service';

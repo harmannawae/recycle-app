@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/quotes */
+/* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { SessionService } from '../session/session.service';
@@ -16,8 +18,6 @@ export class MenuMemberPage implements OnInit {
   ) { }
 
   ngOnInit() {
-    
-    
   }
   //เรียกข้อมูล แสดงคนคนเดี่ยวเท่านั้น
   async ionViewDidEnter() {
@@ -33,7 +33,5 @@ export class MenuMemberPage implements OnInit {
       this.session.showAlert(err);
     });
   }
-  
-  
 }
 

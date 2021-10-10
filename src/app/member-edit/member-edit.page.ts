@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/quotes */
+/* eslint-disable @typescript-eslint/naming-convention */
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SessionService } from '../session/session.service';
@@ -53,7 +55,6 @@ export class MemberEditPage implements OnInit {
       username: this.username,
       password: this.password,
       user_type: this.user_type
-      
     }, true).then((res: any) => {
       this.session.showAlert(res.msg).then(rs => {
         this.router.navigateByUrl('/manage-member');

@@ -1,3 +1,6 @@
+/* eslint-disable eol-last */
+/* eslint-disable @typescript-eslint/quotes */
+/* eslint-disable @typescript-eslint/naming-convention */
 import { Component } from '@angular/core';
 import { SessionService } from '../session/session.service';
 
